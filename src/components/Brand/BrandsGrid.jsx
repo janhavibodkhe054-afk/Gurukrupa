@@ -178,7 +178,7 @@ export default function BrandsGrid() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F8FAFC] py-[100px] overflow-hidden">
+    <section className="relative w-full bg-[#F8FAFC] py-[60px] overflow-hidden">
 
       {/* BLURS */}
       <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-orange-300/10 blur-[120px] rounded-full" />

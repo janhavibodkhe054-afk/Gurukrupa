@@ -138,15 +138,15 @@ ${formData.message}
               Get In Touch
             </span>
 
-            <h2 className="text-[#111111] text-[42px] md:text-[72px] font-light leading-[1.02] mt-[22px]">
-              We are always
-              
-              ready to help
-              
-              and answer
-              
-              your questions
-            </h2>
+            <h2 className="text-[#16265E] text-[38px] md:text-[62px] font-bold leading-[1.08] mt-[22px] tracking-[-2px]">
+  We are always
+  
+  ready to help
+  
+  and answer
+  
+  your questions
+</h2>
 
             <p className="text-gray-500 text-[16px] leading-[34px] mt-[30px] max-w-[750px]">
               Looking for premium electrical materials,

@@ -18,8 +18,8 @@ export default function AboutBanner() {
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
 
         {/* DECORATIVE ELEMENTS (hidden on mobile for performance + clean UI) */}
 

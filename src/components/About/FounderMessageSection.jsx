@@ -16,7 +16,7 @@ export default function FounderMessageSection() {
         <div className="w-full h-full bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:70px_70px]" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-[18px] sm:px-[25px] lg:px-[40px]">
+      <div className="relative z-10 max-w-[1250px] mx-auto px-[18px] sm:px-[25px] lg:px-[40px]">
 
         <motion.div
           initial={{
@@ -31,57 +31,91 @@ export default function FounderMessageSection() {
             duration: 0.8,
           }}
           viewport={{ once: true }}
-          className="relative"
+          className="grid lg:grid-cols-[380px_1fr] gap-[50px] items-center"
         >
 
-          {/* BIG BG TEXT */}
-          <div className="absolute top-[-40px] left-0 text-[70px] sm:text-[120px] md:text-[160px] font-bold text-[#0F172A]/[0.03] leading-none select-none">
-            FOUNDER
+          {/* LEFT IMAGE */}
+          <div className="relative flex justify-center lg:justify-start">
+
+            {/* BLUE GLOW */}
+            <div className="absolute w-[280px] h-[280px] bg-[#4F8CC9]/20 blur-[90px] rounded-full" />
+
+            {/* IMAGE BOX */}
+            <div className="relative bg-white p-[12px] rounded-[30px] shadow-[0_20px_60px_rgba(15,23,42,0.12)] border border-[#E5EAF4]">
+
+              <img
+                src="/founder.jpeg"
+                alt="Founder"
+                className="w-[300px] sm:w-[340px] md:w-[360px] h-[420px] sm:h-[470px] object-cover rounded-[24px]"
+              />
+
+              {/* NAME BADGE */}
+              <div className="absolute bottom-[20px] left-[20px] right-[20px] bg-white/90 backdrop-blur-md rounded-[18px] px-[20px] py-[16px] shadow-lg border border-white/40">
+
+                <h4 className="text-[#0F172A] text-[20px] font-bold">
+                  Mr. Hanumant Khandekar
+                </h4>
+
+                <p className="text-[#4F8CC9] text-[13px] uppercase tracking-[2px] mt-1 font-medium">
+                  Founder & Director
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* TOP LINE */}
-          <div className="flex items-center gap-[14px]">
-            <div className="w-[70px] h-[3px] bg-gradient-to-r from-[#F28C28] to-[#4F8CC9] rounded-full" />
+          {/* RIGHT CONTENT */}
+          <div className="relative">
 
-            <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[12px] sm:text-[13px] font-semibold">
-              Founder Message
-            </span>
-          </div>
-
-          {/* HEADING */}
-          <h2 className="text-[#0F172A] text-[36px] sm:text-[52px] md:text-[68px] font-bold leading-[1.05] mt-[24px]">
-            Message From
-            <br />
-            Founder
-          </h2>
-
-          {/* MESSAGE BOX */}
-          <div className="relative mt-[50px] border-l-[4px] border-[#F28C28] pl-[24px] sm:pl-[35px]">
-
-            {/* QUOTE ICON */}
-            <div className="absolute -top-[12px] left-[-18px] w-[42px] h-[42px] rounded-full bg-[#0F172A] flex items-center justify-center shadow-lg">
-              <Quote size={18} className="text-[#F28C28]" />
+            {/* BIG BG TEXT */}
+            <div className="absolute top-[-40px] left-0 text-[70px] sm:text-[120px] md:text-[160px] font-bold text-[#0F172A]/[0.03] leading-none select-none">
+              FOUNDER
             </div>
 
-            {/* MESSAGE */}
-            <p className="text-[#334155] text-[20px] sm:text-[28px] md:text-[34px] leading-[1.7] font-light max-w-[950px]">
-              “Our goal is to provide customers with genuine electrical
-              products, the latest lighting solutions, and dependable service
-              under one roof.”
-            </p>
+            {/* TOP LINE */}
+            <div className="flex items-center gap-[14px]">
+              <div className="w-[70px] h-[3px] bg-gradient-to-r from-[#F28C28] to-[#4F8CC9] rounded-full" />
 
-            {/* FOUNDER NAME */}
-            <div className="mt-[35px]">
-              <h4 className="text-[#0F172A] text-[22px] sm:text-[28px] font-bold">
-                — Mr. Hanumant Khandekar
-              </h4>
+              <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[12px] sm:text-[13px] font-semibold">
+                Founder Message
+              </span>
+            </div>
 
-              <p className="text-[#64748B] text-[14px] sm:text-[16px] mt-[6px] tracking-[2px] uppercase">
-                Founder • Gurukrupa Electricals & Light House
+            {/* HEADING */}
+            <h2 className="text-[#0F172A] text-[36px] sm:text-[52px] md:text-[68px] font-bold leading-[1.05] mt-[24px]">
+              Message From
+              <br />
+              Founder
+            </h2>
+
+            {/* MESSAGE BOX */}
+            <div className="relative mt-[50px] border-l-[4px] border-[#F28C28] pl-[24px] sm:pl-[35px]">
+
+              {/* QUOTE ICON */}
+              <div className="absolute -top-[12px] left-[-18px] w-[42px] h-[42px] rounded-full bg-[#0F172A] flex items-center justify-center shadow-lg">
+                <Quote size={18} className="text-[#F28C28]" />
+              </div>
+
+              {/* MESSAGE */}
+              <p className="text-[#334155] text-[20px] sm:text-[28px] md:text-[34px] leading-[1.7] font-light max-w-[950px]">
+                “Our goal is to provide customers with genuine electrical
+                products, the latest lighting solutions, and dependable service
+                under one roof.”
               </p>
-            </div>
 
+              {/* FOUNDER NAME */}
+              <div className="mt-[35px]">
+                <h4 className="text-[#0F172A] text-[22px] sm:text-[28px] font-bold">
+                  — Mr. Hanumant Khandekar
+                </h4>
+
+                <p className="text-[#64748B] text-[14px] sm:text-[16px] mt-[6px] tracking-[2px] uppercase">
+                  Founder • Gurukrupa Electricals & Light House
+                </p>
+              </div>
+
+            </div>
           </div>
+
         </motion.div>
       </div>
     </section>

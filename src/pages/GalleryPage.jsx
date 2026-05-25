@@ -6,7 +6,7 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const galleryImages = [
-    "https://images.unsplash.com/photo-1621905252472-e8f4f1d7c0e9?q=80&w=1200&auto=format&fit=crop",
+    "https://tiimg.tistatic.com/fp/1/009/532/industrial-led-lights-417.jpg",
     "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop",

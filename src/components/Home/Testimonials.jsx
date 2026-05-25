@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 export default function Testimonials() {
   const sliderRef = useRef(null);
@@ -37,6 +37,7 @@ Wide availability of branded electrical products. After-sales support is also ve
     },
   ];
 
+  // DUPLICATE FOR INFINITE LOOP
   const loopTestimonials = [...testimonials, ...testimonials];
 
   useEffect(() => {
@@ -46,105 +47,154 @@ Wide availability of branded electrical products. After-sales support is also ve
     let animationFrame;
     let position = 0;
 
-    const speed = window.innerWidth < 768 ? 0.4 : 0.7;
+    // SPEED
+    const speed = window.innerWidth < 768 ? 0.5 : 0.8;
 
-    const animate = () => {
+    const autoSlide = () => {
       position += speed;
+
       slider.scrollLeft = position;
 
+      // RESET SMOOTHLY
       if (position >= slider.scrollWidth / 2) {
         position = 0;
+        slider.scrollLeft = 0;
       }
 
-      animationFrame = requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(autoSlide);
     };
 
-    animationFrame = requestAnimationFrame(animate);
+    autoSlide();
 
-    return () => cancelAnimationFrame(animationFrame);
+    // PAUSE ON HOVER
+    const stopAnimation = () => {
+      cancelAnimationFrame(animationFrame);
+    };
+
+    const startAnimation = () => {
+      autoSlide();
+    };
+
+    slider.addEventListener("mouseenter", stopAnimation);
+    slider.addEventListener("mouseleave", startAnimation);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+
+      slider.removeEventListener("mouseenter", stopAnimation);
+      slider.removeEventListener("mouseleave", startAnimation);
+    };
   }, []);
 
   return (
-    <section className="relative w-full bg-[#F8FAFC] py-14 sm:py-20 overflow-hidden">
+    <section className="relative w-full bg-gradient-to-b from-[#F8FBFF] to-white py-16 sm:py-20 overflow-hidden">
 
-      {/* background blur */}
-      <div className="absolute top-[-100px] left-[-100px] w-[250px] sm:w-[320px] h-[250px] sm:h-[320px] bg-orange-200/10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-[-100px] right-[-100px] w-[250px] sm:w-[320px] h-[250px] sm:h-[320px] bg-[#4F8CC9]/10 blur-[120px] rounded-full" />
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-[#4F8CC9]/10 blur-[120px] rounded-full" />
+
+      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-[#16265E]/10 blur-[120px] rounded-full" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
 
         {/* HEADER */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 sm:mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
 
           <div>
-            <span className="text-[#4F8CC9] text-[11px] sm:text-[13px] uppercase tracking-[3px] font-semibold">
+
+            <span className="inline-block bg-[#4F8CC9]/10 text-[#4F8CC9] text-[11px] sm:text-[13px] uppercase tracking-[3px] font-semibold px-5 py-2 rounded-full">
               Testimonials
             </span>
 
-            <h2 className="text-[26px] sm:text-[36px] md:text-[46px] font-semibold text-[#111] mt-2 leading-tight">
+            <h2 className="text-[30px] sm:text-[40px] md:text-[50px] font-black text-[#16265E] mt-4 leading-tight">
               What Customers Say
             </h2>
+
+            <div className="w-24 h-[4px] rounded-full bg-gradient-to-r from-[#4F8CC9] to-[#16265E] mt-5" />
           </div>
 
-          <p className="text-gray-500 text-[14px] sm:text-[16px] leading-[26px] max-w-[520px]">
-            Trusted by homeowners, electricians, contractors, and industries for quality electrical materials
-            and modern lighting solutions.
+          <p className="text-gray-500 text-[15px] sm:text-[16px] leading-[30px] max-w-[540px]">
+            Trusted by homeowners, electricians, contractors,
+            and industries for premium electrical materials and
+            modern lighting solutions.
           </p>
         </div>
 
         {/* SLIDER */}
         <div
           ref={sliderRef}
-          className="overflow-x-auto scrollbar-hide scroll-smooth"
+          className="
+            overflow-x-scroll
+            scrollbar-hide
+            scroll-smooth
+            whitespace-nowrap
+            select-none
+          "
         >
-          <div className="flex gap-4 sm:gap-5 md:gap-6 w-max pr-4">
+
+          <div className="flex gap-5 md:gap-7 w-max pr-4">
 
             {loopTestimonials.map((item, index) => (
               <div
                 key={index}
                 className="
+                  relative
                   flex-shrink-0
-                  w-[85vw] sm:w-[320px] md:w-[360px] lg:w-[380px]
-                  bg-white border border-[#EDF2F7]
-                  rounded-2xl md:rounded-3xl
-                  p-5 sm:p-6 md:p-7
-                  shadow-sm hover:shadow-lg
-                  transition-all duration-300
+                  w-[85vw] sm:w-[340px] md:w-[370px] lg:w-[390px]
+                  bg-white
+                  border border-[#E8EEF9]
+                  rounded-[30px]
+                  p-6 sm:p-7
+                  shadow-[0_8px_30px_rgba(0,0,0,0.05)]
+                  hover:shadow-[0_20px_60px_rgba(22,38,94,0.12)]
+                  transition-all duration-500
+                  hover:-translate-y-2
+                  overflow-hidden
                 "
               >
 
-                {/* stars */}
-                <div className="flex gap-1 mb-4">
+                {/* TOP BORDER */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#4F8CC9] to-[#16265E]" />
+
+                {/* QUOTE ICON */}
+                <div className="absolute top-6 right-6 opacity-10">
+                  <Quote size={52} className="text-[#16265E]" />
+                </div>
+
+                {/* STARS */}
+                <div className="flex gap-1 mb-5">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      size={15}
+                      size={16}
                       fill="#FDBA74"
                       className="text-orange-300"
                     />
                   ))}
                 </div>
 
-                {/* text */}
-                <p className="text-gray-600 text-[14px] sm:text-[15px] leading-[26px] sm:leading-[28px] whitespace-pre-line">
+                {/* TEXT */}
+                <p className="text-gray-600 text-[15px] leading-[30px] whitespace-pre-line relative z-10">
                   “{item.text}”
                 </p>
 
-                <div className="h-[1px] bg-[#EEF2F7] my-5" />
+                {/* DIVIDER */}
+                <div className="h-[1px] bg-[#EEF2F7] my-6" />
 
-                {/* user */}
+                {/* USER */}
                 <div className="flex items-center justify-between">
 
                   <div>
-                    <h4 className="text-[15px] sm:text-[17px] font-semibold text-[#111]">
+                    <h4 className="text-[18px] font-bold text-[#16265E]">
                       {item.name}
                     </h4>
-                    <p className="text-[#4F8CC9] text-[11px] uppercase tracking-wide mt-1">
+
+                    <p className="text-[#4F8CC9] text-[11px] uppercase tracking-[2px] mt-1 font-medium">
                       Verified Customer
                     </p>
                   </div>
 
-                  <div className="w-2.5 h-2.5 rounded-full bg-orange-300" />
+                  {/* VERIFIED DOT */}
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#4F8CC9] to-[#16265E]" />
                 </div>
 
               </div>

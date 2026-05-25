@@ -63,7 +63,7 @@ export default function WhyChooseSection() {
             </div>
 
             {/* TITLE */}
-            <h2 className="text-[#111] text-[30px] sm:text-[40px] md:text-[54px] font-bold leading-[1.1] mt-[22px] max-w-[650px]">
+            <h2 className="text-[#0B1C3D] text-[30px] sm:text-[40px] md:text-[54px] font-bold leading-[1.1] mt-[22px] max-w-[650px]">
               Smart, Reliable &
               <br />
               Modern Electrical
@@ -76,7 +76,7 @@ export default function WhyChooseSection() {
 
               {/* IMAGE */}
               <img
-                src="https://images.unsplash.com/photo-1621905252472-e8f4f1d7c0e9?q=80&w=1200&auto=format&fit=crop"
+                src="https://www.bria.com.ph/wp-content/uploads/2022/04/Benefits-of-Using-LED-Lights-and-Bulbs.png"
                 alt=""
                 className="w-full h-[320px] sm:h-[420px] object-cover group-hover:scale-105 transition duration-700"
               />
