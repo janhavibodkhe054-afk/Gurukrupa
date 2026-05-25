@@ -48,16 +48,16 @@ export default function PremiumNavbar() {
       }`}
     >
       {/* TOP BAR */}
-      <div className="bg-black overflow-hidden border-b border-gray-800">
+      <div className="bg-[#071426] overflow-hidden border-b border-[#16345C]">
         <div className="relative flex items-center">
           {/* RUNNING TEXT */}
           <div className="marquee whitespace-nowrap py-3">
             <div className="marquee-content flex items-center gap-16">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="flex items-center gap-4">
-                  <span className="w-2 h-2 rounded-full bg-orange-500" />
+                  <span className="w-2 h-2 rounded-full bg-[#F28C28]" />
 
-                  <p className="text-white text-[14px] md:text-[15px] tracking-wide font-medium">
+                  <p className="text-white/90 text-[14px] md:text-[15px] tracking-wide font-medium">
                     Premium Electrical Materials • LED Lighting • Fancy Lights •
                     Industrial Solutions
                   </p>
@@ -71,9 +71,16 @@ export default function PremiumNavbar() {
             href="https://wa.me/919923686402"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:flex absolute right-0 top-0 h-full items-center gap-3 bg-[#111111] px-8 border-l border-gray-700 hover:bg-green-600 transition-all duration-300 group"
+            className="
+        hidden lg:flex absolute right-0 top-0 h-full
+        items-center gap-3
+        bg-gradient-to-r from-[#0B1E36] to-[#12345B]
+        px-8 border-l border-[#234B7C]
+        hover:from-[#F28C28] hover:to-[#d97706]
+        transition-all duration-500 group
+      "
           >
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
                 alt="WhatsApp"
@@ -190,7 +197,7 @@ export default function PremiumNavbar() {
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden w-12 h-12 rounded-full bg-black text-white flex items-center justify-center"
+            className="lg:hidden w-12 h-12 rounded-full bg-[#16275F] text-white flex items-center justify-center"
           >
             {open ? <X size={26} /> : <Menu size={26} />}
           </button>

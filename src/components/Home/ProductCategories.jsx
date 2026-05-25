@@ -105,20 +105,38 @@ export default function ProductCategories() {
       <div className="max-w-[1600px] mx-auto px-[16px] sm:px-[24px] md:px-[40px] lg:px-[60px]">
 
         {/* HEADING */}
-        <div className="text-center mb-[50px] md:mb-[70px]">
+        <div className="text-center mb-[55px] md:mb-[80px]">
 
-          <h2 className="text-[30px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-light text-[#111111] leading-tight">
-            Smart by Design,
-            <br className="md:hidden" />
-            Thoughtful by Nature
-          </h2>
+  {/* HEADING */}
+  <div className="flex flex-col items-center">
 
-          <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[18px] mt-[18px] max-w-[900px] mx-auto leading-[30px] md:leading-[34px] px-2">
-            Explore our premium range of electrical materials,
-            modular accessories, LED lights, fancy lighting,
-            and industrial electrical solutions.
-          </p>
-        </div>
+    <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[11px] font-semibold mb-4">
+      Our Products
+    </span>
+
+    <h2 className="text-[26px] sm:text-[34px] md:text-[46px] lg:text-[54px] font-black tracking-[-1.5px] text-[#16265E] leading-[1.1]">
+      Smart by Design,
+      <span className="text-[#4F8CC9]">
+        {" "}Thoughtful by Nature
+      </span>
+    </h2>
+
+    {/* UNDERLINE */}
+    <div className="relative mt-5">
+      <div className="w-[130px] h-[4px] rounded-full bg-gradient-to-r from-[#F28C28] via-[#FFB347] to-[#4F8CC9]" />
+
+      <div className="absolute -top-[3px] left-1/2 -translate-x-1/2 w-[12px] h-[12px] rounded-full bg-[#F28C28] border-[3px] border-white shadow-md" />
+    </div>
+  </div>
+
+  {/* DESCRIPTION */}
+  <p className="text-[#667085] text-[15px] sm:text-[17px] md:text-[18px] mt-[24px] max-w-[850px] mx-auto leading-[32px] md:leading-[36px] font-light">
+    Explore our premium collection of electrical materials,
+    modular accessories, LED lighting, decorative fixtures,
+    and industrial electrical solutions crafted for modern
+    residential, commercial, and industrial spaces.
+  </p>
+</div>
 
         {/* SLIDER AREA */}
         <div className="relative max-w-[1280px] mx-auto">

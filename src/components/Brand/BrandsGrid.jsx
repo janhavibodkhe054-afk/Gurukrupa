@@ -208,7 +208,7 @@ export default function BrandsGrid() {
             Trusted Electrical Brands
           </span>
 
-          <h2 className="text-[38px] md:text-[60px] font-bold text-[#111111] mt-[18px] leading-[1.05]">
+          <h2 className="text-[38px] md:text-[60px] font-bold text-[#1B255A] mt-[18px] leading-[1.05]">
             Brands We Deal In
           </h2>
 

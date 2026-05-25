@@ -48,7 +48,7 @@ const navigate = useNavigate();
               Gallery Preview
             </span>
 
-            <h2 className="text-[42px] md:text-[70px] font-bold text-[#111111] leading-[1.02] mt-[18px]">
+            <h2 className="text-[42px] md:text-[70px] font-bold text-[#1B255A] leading-[1.02] mt-[18px]">
               Our Store &
               <br />
               Product Gallery

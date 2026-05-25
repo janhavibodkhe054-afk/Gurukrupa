@@ -81,7 +81,7 @@ export default function FounderMessageSection() {
             </div>
 
             {/* HEADING */}
-            <h2 className="text-[#0F172A] text-[36px] sm:text-[52px] md:text-[68px] font-bold leading-[1.05] mt-[24px]">
+            <h2 className="text-[#1B255A] text-[36px] sm:text-[52px] md:text-[68px] font-bold leading-[1.05] mt-[24px]">
               Message From
               <br />
               Founder
@@ -104,7 +104,7 @@ export default function FounderMessageSection() {
 
               {/* FOUNDER NAME */}
               <div className="mt-[35px]">
-                <h4 className="text-[#0F172A] text-[22px] sm:text-[28px] font-bold">
+                <h4 className="text-[#1B255A] text-[22px] sm:text-[28px] font-bold">
                   — Mr. Hanumant Khandekar
                 </h4>
 

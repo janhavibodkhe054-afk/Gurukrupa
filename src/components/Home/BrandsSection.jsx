@@ -45,11 +45,11 @@ export default function BrandsSection() {
           {/* LEFT */}
           <div>
 
-            <span className="uppercase tracking-[5px] text-[#4F8CC9] text-sm font-semibold">
+            <span className="uppercase tracking-[5px] text-[#1B255A] text-sm font-semibold">
               Trusted Brands
             </span>
 
-            <h2 className="text-[42px] md:text-[68px] font-bold text-[#111111] leading-[1.05] mt-[18px]">
+            <h2 className="text-[42px] md:text-[68px] font-bold text-[#1B255A] leading-[1.05] mt-[18px]">
               Trusted Brands
               <br />
               We Deal In

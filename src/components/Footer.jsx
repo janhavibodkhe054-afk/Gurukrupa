@@ -146,33 +146,30 @@ export default function Footer() {
           {[
             {
               name: "Electrical Wires & Cables",
-              link: "/products/wires-cables",
+              link: "/electrical",
             },
 
             {
               name: "Switches & Modular Accessories",
-              link: "/products/switches",
+              link: "/switches",
             },
 
             {
               name: "LED Lights",
-              link: "/products/led-lights",
+              link: "/led-lights",
             },
 
             {
               name: "Fancy Lighting",
-              link: "/products/fancy-lighting",
+              link: "/fancy-lighting",
             },
 
             {
               name: "Industrial Electrical Materials",
-              link: "/products/industrial",
+              link: "/industrial",
             },
 
-            {
-              name: "MCBs & Distribution Boards",
-              link: "/products/mcb-distribution",
-            },
+           
           ].map((item, index) => (
             <a
               key={index}

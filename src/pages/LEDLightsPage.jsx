@@ -196,7 +196,7 @@ export default function LEDLightsPage() {
                 Gallery
               </span>
 
-              <h2 className="text-[#111111] text-[42px] sm:text-[65px] font-bold leading-[1] mt-[18px]">
+              <h2 className="text-[#1B255A] text-[42px] sm:text-[65px] font-bold leading-[1] mt-[18px]">
                 Lighting
                 <br />
                 Showcase

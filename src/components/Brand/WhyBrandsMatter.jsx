@@ -70,7 +70,7 @@ export default function WhyBrandsMatter() {
             Why Brands Matter
           </span>
 
-          <h2 className="text-[38px] md:text-[60px] font-bold text-[#111111] leading-[1.08] mt-[18px]">
+          <h2 className="text-[38px] md:text-[60px] font-bold text-[#1B255A] leading-[1.08] mt-[18px]">
             Trusted Brands Ensure
             <br />
             Better Performance
