@@ -100,17 +100,17 @@ export default function PremiumNavbar() {
         <div className="h-[85px] flex items-center justify-between">
           {/* LOGO */}
           <a href="/" className="flex items-center group">
-  <div className="relative">
-    {/* GLOW */}
-    <div className="absolute inset-0 bg-orange-500 blur-3xl opacity-20 group-hover:opacity-40 transition duration-500" />
+            <div className="relative">
+              {/* GLOW */}
+              <div className="absolute inset-0 bg-orange-500 blur-3xl opacity-20 group-hover:opacity-40 transition duration-500" />
 
-    <img
-      src="/logo.jpeg"
-      alt="logo"
-      className="relative w-[120px] object-contain transition-transform duration-500 group-hover:scale-105"
-    />
-  </div>
-</a>
+              <img
+                src="/logo.png"
+                alt="logo"
+                className="relative w-[120px] object-contain transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          </a>
 
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-10">
