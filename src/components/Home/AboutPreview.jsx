@@ -8,13 +8,14 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
+
+  const navigate = useNavigate();
+
   const fadeUp = {
-    hidden: {
-      opacity: 0,
-      y: 60,
-    },
+    hidden: { opacity: 0, y: 60 },
     visible: (i = 1) => ({
       opacity: 1,
       y: 0,
@@ -31,33 +32,34 @@ export default function AboutSection() {
       title: "Quality Products",
       text: "Premium quality wires, switches, cables, and electrical materials from trusted brands.",
     },
-
     {
       icon: Lightbulb,
       title: "Modern Lighting",
-      text: "Wide collection of LED lights, fancy lighting, decorative lights, and modern lighting solutions.",
+      text: "Wide range of LED lights, fancy lighting, decorative lights, and smart lighting solutions.",
     },
-
     {
       icon: Building2,
       title: "Residential & Industrial",
-      text: "Complete electrical solutions for homes, offices, shops, commercial projects, and industries.",
+      text: "Complete electrical solutions for homes, offices, commercial projects, and industries.",
     },
-
     {
       icon: ThumbsUp,
-      title: "Customer Support",
-      text: "Friendly service, trusted guidance, and reliable support for every electrical requirement.",
+      title: "Trusted Service",
+      text: "Reliable support, expert guidance, and customer satisfaction for every project.",
     },
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#f8fbff] to-white py-14 lg:py-20 overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#f7fbff] via-white to-[#f8fbff] py-10 lg:py-28">
 
-      <div className="max-w-[1400px] mx-auto px-5 lg:px-10">
+      {/* BACKGROUND GLOW */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#4F8CC9]/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#F28C28]/10 blur-[120px] rounded-full" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* TOP SECTION */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
@@ -66,209 +68,275 @@ export default function AboutSection() {
             viewport={{ once: true }}
             variants={fadeUp}
             custom={1}
+            className="max-w-2xl"
           >
 
-            {/* SMALL TAG */}
+            {/* TAG */}
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="inline-block bg-[#4F8CC9]/10 text-[#4F8CC9] px-5 py-2 rounded-full text-sm font-semibold mb-5"
+              className="inline-flex items-center gap-2 bg-[#4F8CC9]/10 border border-[#4F8CC9]/20 text-[#4F8CC9] px-5 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-md"
             >
-              Trusted Electrical Solutions
+              ⚡ Trusted Electrical Solutions
             </motion.div>
 
             {/* HEADING */}
             <motion.h2
               variants={fadeUp}
               custom={2}
-              className="text-[34px] md:text-[52px] font-black uppercase text-[#16265E] leading-[1.1]"
+              className="text-[38px] md:text-[64px] font-black uppercase text-[#16265E] leading-[1.02] tracking-tight"
             >
-              Gurukrupa Electricals
+              Gurukrupa
               <br />
-
               <span className="text-[#4F8CC9]">
-                & Light House
+                Electricals &
+              </span>
+              <br />
+              <span className="text-[#F28C28]">
+                Light House
               </span>
             </motion.h2>
 
-            {/* SUB HEADING */}
-            <motion.h4
+            {/* SUBTITLE */}
+            <motion.p
               variants={fadeUp}
               custom={3}
-              className="text-[#F28C28] text-[22px] font-semibold mt-4"
+              className="text-[#16265E] text-[20px] md:text-[24px] font-semibold mt-6 leading-[38px]"
             >
-              Complete Electrical & Lighting Solutions
-            </motion.h4>
+              Complete Electrical & Modern Lighting Solutions
+              for Residential, Commercial & Industrial Projects.
+            </motion.p>
 
             {/* LINE */}
             <motion.div
               variants={fadeUp}
               custom={4}
-              className="w-28 h-[4px] rounded-full bg-gradient-to-r from-[#F28C28] via-[#4F8CC9] to-[#16265E] mt-5 mb-7"
+              className="w-36 h-[5px] rounded-full bg-gradient-to-r from-[#F28C28] via-[#4F8CC9] to-[#16265E] mt-7 mb-8"
             />
 
             {/* PARAGRAPHS */}
-            <div className="space-y-2">
-
-              <motion.p
-                variants={fadeUp}
-                custom={5}
-                className="text-[#555] text-[17px] leading-[32px]"
-              >
-                Gurukrupa Electricals & Light House offers
-                complete electrical solutions for residential,
-                commercial, and industrial projects with a
-                strong focus on quality, reliability, and
-                customer satisfaction.
-              </motion.p>
-
-              <motion.p
-                variants={fadeUp}
-                custom={6}
-                className="text-[#555] text-[17px] leading-[32px]"
-              >
-                We provide a wide range of electrical
-                materials including wires & cables,
-                modular switches, LED lights, fancy
-                lighting, industrial electrical products,
-                MCBs, conduits, accessories, and more.
-              </motion.p>
-
-              <motion.p
-                variants={fadeUp}
-                custom={7}
-                className="text-[#555] text-[17px] leading-[32px]"
-              >
-                Our goal is to deliver trusted products,
-                modern solutions, and professional service
-                that help customers find everything they
-                need under one roof.
-              </motion.p>
+            <div className="">
+              {[
+                "We provide premium quality wires, cables, switches, MCBs, LED lights, and electrical accessories from trusted brands.",
+                "From modern decorative lighting to industrial electrical materials, we deliver complete solutions under one roof.",
+                "Our focus is quality products, professional guidance, competitive pricing, and long-term customer trust.",
+              ].map((text, i) => (
+                <motion.p
+                  key={i}
+                  variants={fadeUp}
+                  custom={5 + i}
+                  className="text-[#2E2E2E] text-[17px] leading-[33px]"
+                >
+                  {text}
+                </motion.p>
+              ))}
             </div>
+
+            {/* BUTTONS */}
+            <motion.div
+              variants={fadeUp}
+              custom={8}
+              className="flex flex-wrap gap-5 mt-10"
+            >
+              <button
+              onClick={() => navigate("/about")}
+              className="px-8 py-4 rounded-2xl bg-[#16265E] hover:bg-[#0f1d4b] text-white font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1">
+                Learn More
+              </button>
+
+              <button
+              onClick={() => navigate("/contact")}
+              className="px-8 py-4 rounded-2xl border border-[#16265E]/20 bg-white hover:bg-[#F8FAFF] text-[#16265E] font-semibold transition-all duration-300">
+                Contact Us
+              </button>
+            </motion.div>
           </motion.div>
 
           {/* RIGHT IMAGE */}
           <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.9,
-              x: 80,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.9,
-            }}
+            initial={{ opacity: 0, scale: 0.9, x: 80 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
             viewport={{ once: true }}
-            className="flex justify-center"
+            className="relative flex justify-center"
           >
 
-            <div className="relative group">
+            {/* GLOW */}
+            <div className="absolute -top-16 -right-16 w-[250px] h-[250px] bg-[#4F8CC9]/20 blur-[120px] rounded-full" />
+            <div className="absolute -bottom-16 -left-16 w-[250px] h-[250px] bg-[#F28C28]/15 blur-[120px] rounded-full" />
 
-              {/* BLUR EFFECT */}
-              <div className="absolute -top-10 -right-10 w-[220px] h-[220px] bg-[#4F8CC9]/20 blur-[100px] rounded-full" />
+            {/* IMAGE BOX */}
+            <div className="relative overflow-hidden rounded-[36px] border border-white/50 bg-white shadow-[0_30px_80px_rgba(22,38,94,0.18)]">
 
-              <div className="absolute -bottom-10 -left-10 w-[220px] h-[220px] bg-[#F28C28]/10 blur-[100px] rounded-full" />
+              {/* TOP BADGE */}
+              <div className="absolute top-5 left-5 z-20 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-lg">
+                <p className="text-[#16265E] font-bold text-lg">
+                  10+ Years
+                </p>
+                <span className="text-sm text-gray-500">
+                  Trusted Experience
+                </span>
+              </div>
 
-              {/* IMAGE BOX */}
-              <div className="overflow-hidden rounded-[28px] shadow-[0_20px_60px_rgba(22,38,94,0.18)] border border-white">
+              <img
+                src="https://media.istockphoto.com/id/598954202/photo/some-led-lamps-blue-light-science-technology-background.jpg"
+                alt="Electrical Products"
+                className="w-full max-w-[620px] h-[650px] object-cover hover:scale-105 transition duration-700"
+              />
 
-                <img
-                  src="https://media.istockphoto.com/id/598954202/photo/some-led-lamps-blue-light-science-technology-background.jpg?s=612x612&w=0&k=20&c=_c6U3QLgV5wWxipLkTmrRogHogw-9XXWBFItny205k0="
-                  alt="Electrical Products"
-                  className="w-full max-w-[580px] object-contain group-hover:scale-[1.05] transition duration-700"
-                />
+              {/* BOTTOM OVERLAY */}
+              <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-[#16265E]/85 to-transparent">
+                <h3 className="text-white text-2xl font-bold">
+                  Premium Electrical Store
+                </h3>
+                <p className="text-white/80 mt-2 text-sm">
+                  Quality Products • Modern Lighting • Trusted Service
+                </p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* FEATURE SECTION */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        {/* FEATURE CARDS */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-20">
 
-          {cards.map((item, index) => {
-            const Icon = item.icon;
+  {cards.map((item, index) => {
+    const Icon = item.icon;
 
-            return (
-              <motion.div
-                key={index}
-                initial={{
-                  opacity: 0,
-                  y: 50,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.15,
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  y: -12,
-                  scale: 1.02,
-                }}
-                className="
-                  group relative overflow-hidden
-                  bg-white
-                  rounded-[30px]
-                  border border-[#E8EEF9]
-                  p-7 lg:p-8
-                  shadow-[0_8px_30px_rgba(0,0,0,0.04)]
-                  hover:shadow-[0_20px_60px_rgba(22,38,94,0.14)]
-                  transition-all duration-500
-                "
-              >
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        viewport={{ once: true }}
+        whileHover={{ y: -14, rotateX: 4, rotateY: -4 }}
+        className="
+          relative group perspective-1000
+          rounded-[24px]
+          p-7
+          overflow-hidden
 
-                {/* TOP GRADIENT */}
-                <div className="absolute top-0 left-0 w-full h-[5px] bg-gradient-to-r from-[#F28C28] via-[#4F8CC9] to-[#16265E]" />
+          bg-gradient-to-b from-white via-[#F8FAFF] to-white
 
-                {/* BG GLOW */}
-                <div className="absolute -top-20 -right-20 w-[180px] h-[180px] bg-[#4F8CC9]/5 rounded-full blur-[80px] group-hover:bg-[#F28C28]/10 transition duration-700" />
+          border border-[#E8EEF5]
 
-                {/* ICON */}
-                <div className="relative z-10 flex items-center justify-between">
+          shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+          hover:shadow-[0_30px_80px_rgba(22,38,94,0.15)]
 
-                  <div className="w-20 h-20 rounded-[24px] bg-gradient-to-br from-[#4F8CC9]/10 to-[#F28C28]/10 flex items-center justify-center group-hover:rotate-6 transition duration-500">
+          transition-all duration-500
+        "
+      >
 
-                    <Icon
-                      size={40}
-                      className="text-[#4F8CC9] stroke-[1.8]"
-                    />
-                  </div>
+        {/* 🌈 COLORED BACKGROUND ORB */}
+        <div className="
+          absolute -top-16 -right-16 w-[180px] h-[180px]
+          bg-[#4F8CC9]/10
+          rounded-full blur-[80px]
 
-                  <div className="w-11 h-11 rounded-full bg-[#F8FAFF] flex items-center justify-center group-hover:bg-[#4F8CC9] transition duration-500">
+          group-hover:bg-[#F28C28]/15
+          transition duration-700
+        " />
 
-                    <ArrowUpRight
-                      size={18}
-                      className="text-[#16265E] group-hover:text-white transition duration-500"
-                    />
-                  </div>
-                </div>
+        {/* 🌊 LEFT COLOR EDGE */}
+        <div className="
+          absolute left-0 top-0 w-[3px] h-0
+          bg-gradient-to-b from-[#F28C28] via-[#4F8CC9] to-[#16265E]
 
-                {/* CONTENT */}
-                <div className="relative z-10 mt-7">
+          group-hover:h-full
+          transition-all duration-500
+        " />
 
-                  <h3 className="text-[24px] font-bold text-[#16265E] leading-[1.3]">
-                    {item.title}
-                  </h3>
+        {/* HEADER */}
+        <div className="flex items-center justify-between relative z-10">
 
-                  <p className="text-[#6B7280] text-[16px] leading-[31px] mt-4">
-                    {item.text}
-                  </p>
-                </div>
+          {/* ICON BLOCK (COLORED SOFT BG) */}
+          <div className="
+            w-14 h-14
+            rounded-xl
+            flex items-center justify-center
 
-                {/* HOVER BOTTOM LINE */}
-                <div className="absolute bottom-0 left-0 h-[4px] w-0 bg-gradient-to-r from-[#F28C28] to-[#4F8CC9] group-hover:w-full transition-all duration-700" />
+            bg-gradient-to-br from-[#4F8CC9]/10 to-[#F28C28]/10
 
-              </motion.div>
-            );
-          })}
+            border border-[#E9EEF5]
+
+            group-hover:scale-110 group-hover:rotate-6
+            transition duration-500
+          ">
+            <Icon size={26} className="text-[#4F8CC9]" />
+          </div>
+
+          {/* ARROW */}
+          <div className="
+            relative w-10 h-10
+            rounded-full
+            flex items-center justify-center
+
+            bg-white
+            border border-[#E9EEF5]
+
+            group-hover:bg-[#16265E]
+            transition duration-300
+            overflow-hidden
+          ">
+
+            <ArrowUpRight
+              size={16}
+              className="
+                text-[#16265E]
+                absolute
+                group-hover:-translate-y-6
+                group-hover:opacity-0
+                transition-all duration-300
+              "
+            />
+
+            <ArrowUpRight
+              size={16}
+              className="
+                text-white
+                absolute translate-y-6 opacity-0
+                group-hover:translate-y-0 group-hover:opacity-100
+                transition-all duration-300
+              "
+            />
+          </div>
         </div>
+
+        {/* TEXT */}
+        <div className="mt-6 relative z-10">
+
+          <h3 className="
+            text-[19px]
+            font-semibold
+            text-[#16265E]
+          ">
+            {item.title}
+          </h3>
+
+          <p className="
+            text-[#5B6472]
+            text-[14px]
+            leading-[26px]
+            mt-3
+          ">
+            {item.text}
+          </p>
+        </div>
+
+        {/* BOTTOM COLOR LINE */}
+        <div className="
+          absolute bottom-0 left-6 right-6 h-[2px]
+          bg-gradient-to-r from-[#F28C28] via-[#4F8CC9] to-[#16265E]
+          opacity-60
+          group-hover:opacity-100
+          transition
+        " />
+
+      </motion.div>
+    );
+  })}
+</div>
       </div>
     </section>
   );

@@ -63,13 +63,13 @@ ${formData.message}
             {/* TOP */}
             <div className="flex items-start justify-between">
               <div>
-                <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[13px] font-semibold">
+                <span className="uppercase tracking-[4px] text-white/95 text-[20px] font-semibold">
                   Gurukrupa Electricals
                 </span>
 
-                <h1 className="text-white text-[48px] md:text-[90px] font-light leading-none mt-[14px]">
-                  Contact
-                </h1>
+                <h1 className="text-white text-[46px] md:text-[80px] font-semibold tracking-tight leading-[0.9] mt-[14px]">
+  Contact
+</h1>
               </div>
 
               <div className="hidden md:flex items-center gap-[10px]">
@@ -85,7 +85,7 @@ ${formData.message}
 
             {/* BOTTOM */}
             <div className="flex items-end justify-between">
-              <p className="text-white/75 text-[15px] md:text-[18px] max-w-[650px] leading-[32px]">
+              <p className="text-white/95 text-[15px] md:text-[18px] max-w-[650px] leading-[32px]">
                 Premium electrical materials, lighting solutions, modular
                 accessories, industrial products, and complete electrical
                 support under one roof.
@@ -117,7 +117,7 @@ ${formData.message}
               We are always ready to help and answer your questions
             </h2>
 
-            <p className="text-gray-500 text-[16px] leading-[34px] mt-[30px] max-w-[750px]">
+            <p className="text-gray-900 text-[16px] leading-[34px] mt-[30px] max-w-[750px]">
               Looking for premium electrical materials, lighting collections,
               modular accessories, industrial products, switches, wires, or
               complete electrical solutions? Our team is always ready to assist
@@ -136,7 +136,7 @@ ${formData.message}
                   Call Center
                 </h4>
 
-                <p className="text-gray-500 text-[15px] leading-[30px] mt-[12px]">
+                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
                   +91 9923686402
                 </p>
               </div>
@@ -151,7 +151,7 @@ ${formData.message}
                   Our Location
                 </h4>
 
-                <p className="text-gray-500 text-[15px] leading-[30px] mt-[12px]">
+                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
                   Chhatrapati Shivaji Maharaj Chowk, Walhekarwadi, Chinchwad,
                   Pune – 411033
                 </p>
@@ -167,7 +167,7 @@ ${formData.message}
                   Email Address
                 </h4>
 
-                <p className="text-gray-500 text-[15px] leading-[30px] mt-[12px]">
+                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
                   gurukrupaelc9@gmail.com
                 </p>
               </div>
@@ -201,7 +201,7 @@ ${formData.message}
                   Social Network
                 </h4>
 
-                <p className="text-gray-500 text-[15px] leading-[30px] mt-[12px]">
+                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
                   Follow us for latest electrical products and lighting
                   collections.
                 </p>
@@ -220,10 +220,10 @@ ${formData.message}
               </span>
 
               <h3 className="text-[#16265E] text-[38px] md:text-[42px] font-black tracking-[-1px] leading-tight mt-[14px]">
-  Let’s Talk
-</h3>
+                Let’s Talk
+              </h3>
 
-              <p className="text-gray-500 text-[15px] leading-[30px] mt-[14px]">
+              <p className="text-gray-900 text-[15px] leading-[30px] mt-[14px]">
                 Fill out your details and our team will contact you shortly
                 regarding your electrical requirements.
               </p>

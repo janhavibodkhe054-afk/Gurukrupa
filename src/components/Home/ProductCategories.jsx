@@ -130,7 +130,7 @@ export default function ProductCategories() {
   </div>
 
   {/* DESCRIPTION */}
-  <p className="text-[#667085] text-[15px] sm:text-[17px] md:text-[18px] mt-[24px] max-w-[850px] mx-auto leading-[32px] md:leading-[36px] font-light">
+  <p className="text-black text-[15px] sm:text-[17px] md:text-[18px] mt-[24px] max-w-[850px] mx-auto leading-[32px] md:leading-[36px] font-light">
     Explore our premium collection of electrical materials,
     modular accessories, LED lighting, decorative fixtures,
     and industrial electrical solutions crafted for modern

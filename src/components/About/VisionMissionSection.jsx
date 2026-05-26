@@ -53,19 +53,19 @@ export default function VisionMissionSection() {
             {/* CONTENT */}
             <div className="mt-[40px] space-y-[26px]">
 
-              <p className="text-white/70 text-[15px] sm:text-[17px] leading-[34px]">
+              <p className="text-white/98 text-[15px] sm:text-[17px] leading-[34px]">
                 To become a trusted leader in the electrical and lighting
                 industry by delivering innovative, reliable, and future-ready
                 solutions that elevate modern living and commercial spaces.
               </p>
 
-              <p className="text-white/70 text-[15px] sm:text-[17px] leading-[34px]">
+              <p className="text-white/98 text-[15px] sm:text-[17px] leading-[34px]">
                 We envision creating smarter and safer environments through
                 advanced electrical technologies, energy-efficient systems, and
                 premium lighting solutions that combine performance with design.
               </p>
 
-              <p className="text-white/70 text-[15px] sm:text-[17px] leading-[34px]">
+              <p className="text-white/98 text-[15px] sm:text-[17px] leading-[34px]">
                 Our goal is to build long-term trust through uncompromising
                 quality, customer satisfaction, and continuous innovation while
                 evolving with changing market needs and technology.
@@ -112,20 +112,20 @@ export default function VisionMissionSection() {
             {/* CONTENT */}
             <div className="mt-[40px] space-y-[26px]">
 
-              <p className="text-white/70 text-[15px] sm:text-[17px] leading-[34px]">
+              <p className="text-white/98 text-[15px] sm:text-[17px] leading-[34px]">
                 To provide high-quality electrical products, decorative
                 lighting, and dependable solutions that meet the evolving needs
                 of residential, commercial, and industrial customers.
               </p>
 
-              <p className="text-white/70 text-[15px] sm:text-[17px] leading-[34px]">
+              <p className="text-white/98 text-[15px] sm:text-[17px] leading-[34px]">
                 We are committed to delivering exceptional service, trusted
                 branded products, and expert support while maintaining the
                 highest standards of professionalism, integrity, and
                 affordability.
               </p>
 
-              <p className="text-white/70 text-[15px] sm:text-[17px] leading-[34px]">
+              <p className="text-white/98 text-[15px] sm:text-[17px] leading-[34px]">
                 Through innovation, ethical business practices, and customer-
                 focused solutions, we aim to contribute toward efficient,
                 sustainable, and modern electrical infrastructure.

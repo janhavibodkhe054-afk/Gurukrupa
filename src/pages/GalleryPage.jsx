@@ -84,7 +84,7 @@ export default function GalleryPage() {
           {/* RIGHT */}
           <div className="lg:pb-[18px]">
 
-            <p className="text-white/60 text-[15px] sm:text-[17px] leading-[34px] max-w-[520px]">
+            <p className="text-white/90 text-[15px] sm:text-[17px] leading-[34px] max-w-[520px]">
               Discover premium electrical installations, smart lighting
               systems, industrial infrastructure, and modern electrical
               solutions crafted with precision and innovation.

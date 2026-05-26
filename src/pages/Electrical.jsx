@@ -3,12 +3,34 @@ import { motion } from "framer-motion";
 
 export default function ElectricalWiresPage() {
   const galleryImages = [
-    "https://www.electricalindia.in/wp-content/uploads/2025/07/electric-wire.jpg",
-    "https://www.electricalindia.in/wp-content/uploads/2025/06/power-cables.jpg",
-    "https://plus.unsplash.com/premium_photo-1682145728214-dbd62535af3f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2lyZXN8ZW58MHx8MHx8fDA%3D",
-    "https://5.imimg.com/data5/ANDROID/Default/2023/3/WO/DK/NB/136185832/product-jpeg-500x500.jpg",
-  ];
+    {
+      image:
+        "https://www.electricalindia.in/wp-content/uploads/2025/07/electric-wire.jpg",
+      subtitle: "Residential Wiring",
+      title: "PVC\nInsulated Wires",
+    },
 
+    {
+      image:
+        "https://www.electricalindia.in/wp-content/uploads/2025/06/power-cables.jpg",
+      subtitle: "Heavy Power Supply",
+      title: "Armoured\nPower Cables",
+    },
+
+    {
+      image:
+        "https://plus.unsplash.com/premium_photo-1682145728214-dbd62535af3f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2lyZXN8ZW58MHx8MHx8fDA%3D",
+      subtitle: "High Flexibility",
+      title: "Flexible\nCopper Wires",
+    },
+
+    {
+      image:
+        "https://5.imimg.com/data5/ANDROID/Default/2023/3/WO/DK/NB/136185832/product-jpeg-500x500.jpg",
+      subtitle: "Fire Protection",
+      title: "FRLS\nSafety Cables",
+    },
+  ];
   return (
     <section className="w-full bg-white overflow-hidden">
       {/* ====================================================== */}
@@ -27,7 +49,7 @@ export default function ElectricalWiresPage() {
         </video>
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-black/35" />
 
         {/* GRADIENT */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
@@ -54,7 +76,7 @@ export default function ElectricalWiresPage() {
               <div className="flex items-center gap-[14px] mb-[28px]">
                 <div className="w-[65px] h-[2px] bg-[#F28C28]" />
 
-                <span className="uppercase tracking-[4px] text-white/80 text-[11px] font-semibold">
+                <span className="uppercase tracking-[4px] text-white/90 text-[11px] font-semibold">
                   Premium Electrical Wires
                 </span>
               </div>
@@ -67,7 +89,7 @@ export default function ElectricalWiresPage() {
               </h1>
 
               {/* SHORT TEXT */}
-              <p className="mt-[28px] text-white/70 text-[15px] sm:text-[17px] leading-[34px] max-w-[560px]">
+              <p className="mt-[28px] text-white/90 text-[15px] sm:text-[17px] leading-[34px] max-w-[560px]">
                 Reliable wire solutions designed for safety, durability, and
                 uninterrupted power transmission.
               </p>
@@ -79,84 +101,72 @@ export default function ElectricalWiresPage() {
       {/* ====================================================== */}
       {/* INFO SECTION */}
       {/* ====================================================== */}
-      <div className="relative py-[70px] overflow-hidden bg-[#FCFCFC]">
-        {/* SOFT BACKGROUND GLOW */}
-        <div className="absolute top-[-120px] left-[-150px] w-[420px] h-[420px] bg-[#4F8CC9]/5 blur-[120px]" />
+      <div className="relative py-[90px] overflow-hidden bg-[#FCFCFC]">
+        {/* BACKGROUND GLOW */}
+        <div className="absolute top-[-120px] left-[-150px] w-[420px] h-[420px] bg-[#4F8CC9]/10 blur-[120px]" />
 
-        <div className="absolute bottom-[-120px] right-[-150px] w-[420px] h-[420px] bg-[#F28C28]/5 blur-[120px]" />
+        <div className="absolute bottom-[-120px] right-[-150px] w-[420px] h-[420px] bg-[#F28C28]/10 blur-[120px]" />
 
-        <div className="relative z-10 max-w-[1150px] mx-auto px-[20px] sm:px-[35px]">
-  <motion.div
-    initial={{
-      opacity: 0,
-      y: 40,
-    }}
-    whileInView={{
-      opacity: 1,
-      y: 0,
-    }}
-    transition={{
-      duration: 0.8,
-    }}
-    viewport={{ once: true }}
-    className="text-left"
-  >
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="w-full"
+          >
+            {/* LABEL */}
+            <span className="inline-block uppercase tracking-[5px] text-[#4F8CC9] text-[11px] font-semibold border border-[#4F8CC9]/20 px-4 py-2 rounded-full bg-white shadow-sm">
+              About Product
+            </span>
 
-    {/* SMALL LABEL */}
-    <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[11px] font-semibold">
-      About Product
-    </span>
+            {/* HEADING */}
+            <h2 className="text-[#16265E] text-[38px] sm:text-[54px] lg:text-[72px] font-bold leading-[1.05] tracking-[-2px] mt-7">
+              Premium Electrical Wire Solutions
+            </h2>
 
-    {/* HEADING */}
-    <h2 className="text-[#16265E] text-[34px] sm:text-[50px] md:text-[58px] font-bold leading-[1.08] mt-[18px] tracking-[-1px]">
-      Premium Electrical
-      <br />
-      Wire Solutions
-    </h2>
+            {/* LINE */}
+            <div className="w-[180px] h-[5px] rounded-full bg-gradient-to-r from-[#4F8CC9] via-[#2E5B9A] to-[#16265E] mt-8" />
 
-    {/* LINE */}
-    <div className="w-[150px] h-[4px] rounded-full bg-gradient-to-r from-[#4F8CC9] to-[#16265E] mt-[28px]" />
+            {/* CONTENT */}
+            <div className="mt-12 space-y-2 w-full">
+              <p className="text-black text-[17px] sm:text-[19px] leading-[2.1] font-light text-justify w-full">
+                Our electrical wires and cables are engineered to deliver safe,
+                stable, and uninterrupted power transmission for residential,
+                commercial, and industrial applications. Built using
+                premium-grade copper conductors and advanced insulation
+                technology, these products ensure superior conductivity,
+                flexibility, heat resistance, and long-lasting durability even
+                in demanding environments.
+              </p>
 
-    {/* CONTENT */}
-    <div className="mt-[40px] space-y-[16px]">
+              <p className="text-black text-[17px] sm:text-[19px] leading-[2.1] font-light text-justify w-full">
+                Designed to meet modern infrastructure standards, our wire
+                solutions provide exceptional electrical performance with
+                enhanced safety and minimal maintenance requirements. From
+                household wiring systems to heavy-duty industrial installations,
+                every product undergoes strict quality testing to ensure
+                reliability and consistent long-term performance.
+              </p>
 
-      <p className="text-[#5F6B7A] text-[16px] sm:text-[18px] leading-[38px] font-light">
-        Our electrical wires and cables are engineered to provide safe,
-        stable, and uninterrupted power transmission for residential,
-        commercial, and industrial applications. Manufactured using
-        high-quality copper conductors and advanced insulation technology,
-        these products ensure superior conductivity, heat resistance,
-        flexibility, and long-term durability even in challenging environments.
-      </p>
+              <p className="text-black text-[17px] sm:text-[19px] leading-[2.1] font-light text-justify w-full">
+                We offer a wide range of electrical cables suitable for lighting
+                systems, machinery connections, power distribution, offices,
+                commercial spaces, factories, and smart infrastructure projects.
+                With a strong focus on innovation and customer satisfaction, our
+                products are trusted by electricians, contractors, builders, and
+                industries across multiple sectors.
+              </p>
 
-      <p className="text-[#5F6B7A] text-[16px] sm:text-[18px] leading-[38px] font-light">
-        Designed to meet modern infrastructure requirements, our wire
-        solutions deliver exceptional electrical performance with enhanced
-        safety standards and minimal maintenance. From household wiring to
-        heavy-duty industrial installations, every product undergoes strict
-        quality checks to guarantee reliability, efficiency, and consistent
-        performance over time.
-      </p>
-
-      <p className="text-[#5F6B7A] text-[16px] sm:text-[18px] leading-[38px] font-light">
-        We offer a wide range of electrical cables suitable for lighting
-        systems, power distribution, machinery connections, commercial
-        buildings, offices, factories, and modern smart infrastructure.
-        With a strong focus on innovation and customer satisfaction, our
-        products are trusted by electricians, contractors, builders,
-        and industries across multiple sectors.
-      </p>
-
-      <p className="text-[#5F6B7A] text-[16px] sm:text-[18px] leading-[38px] font-light">
-        Combining premium materials, advanced manufacturing processes,
-        and industry-approved safety standards, our electrical wire
-        solutions are built to support efficient energy flow while
-        ensuring long-lasting operational safety and dependable performance.
-      </p>
-
-    </div>
-  </motion.div>
-</div>
+              <p className="text-black text-[17px] sm:text-[19px] leading-[2.1] font-light text-justify w-full">
+                Combining premium materials, advanced manufacturing processes,
+                and industry-approved safety standards, our electrical wire
+                solutions are built to support efficient energy flow while
+                ensuring dependable and long-lasting operational safety.
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* ====================================================== */}
@@ -167,9 +177,7 @@ export default function ElectricalWiresPage() {
           {/* TOP */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-[30px] mb-[55px]">
             <div>
-              <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[11px] font-semibold">
-                Gallery
-              </span>
+              
 
               <h2 className="text-[#1B255A] text-[42px] sm:text-[65px] font-bold leading-[1] mt-[18px]">
                 Product
@@ -185,8 +193,9 @@ export default function ElectricalWiresPage() {
           </div>
 
           {/* GALLERY */}
+          {/* GALLERY */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
-            {galleryImages.map((image, index) => (
+            {galleryImages.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{
@@ -209,24 +218,25 @@ export default function ElectricalWiresPage() {
               >
                 {/* IMAGE */}
                 <img
-                  src={image}
+                  src={item.image}
                   alt=""
                   className="w-full h-[450px] object-cover group-hover:scale-110 transition duration-[1200ms]"
                 />
 
                 {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+
+                {/* HOVER GLOW */}
+                <div className="absolute inset-0 bg-[#16265E]/0 group-hover:bg-[#16265E]/10 transition duration-700" />
 
                 {/* CONTENT */}
-                <div className="absolute bottom-[24px] left-[24px]">
+                <div className="absolute bottom-[26px] left-[26px] z-10">
                   <p className="text-[#F28C28] text-[11px] uppercase tracking-[3px] font-semibold">
-                    Premium Series
+                    {item.subtitle}
                   </p>
 
-                  <h3 className="text-white text-[24px] font-bold mt-[8px] leading-[1.2]">
-                    Smart Wire
-                    <br />
-                    Technology
+                  <h3 className="text-white text-[26px] font-bold mt-[10px] leading-[1.1] whitespace-pre-line">
+                    {item.title}
                   </h3>
                 </div>
               </motion.div>
@@ -235,60 +245,46 @@ export default function ElectricalWiresPage() {
         </div>
       </div>
       {/* ====================================================== */}
-{/* CTA SECTION */}
-{/* ====================================================== */}
-<div className="py-[30px] sm:py-[30px] bg-[#F8FBFF]">
+      {/* CTA SECTION */}
+      {/* ====================================================== */}
+      <div className="py-[30px] sm:py-[30px] bg-[#F8FBFF]">
+        <div className="max-w-[1550px] mx-auto px-[20px] sm:px-[35px] lg:px-[50px]">
+          <div className="relative overflow-hidden rounded-[38px] bg-gradient-to-r from-[#16265E] via-[#1E3A8A] to-[#4F8CC9] px-[28px] sm:px-[45px] lg:px-[65px] py-[40px] sm:py-[52px] shadow-[0_20px_70px_rgba(22,38,94,0.18)]">
+            {/* GLOW */}
+            <div className="absolute top-[-80px] right-[-80px] w-[240px] h-[240px] bg-white/10 blur-[90px] rounded-full" />
 
-  <div className="max-w-[1550px] mx-auto px-[20px] sm:px-[35px] lg:px-[50px]">
+            <div className="absolute bottom-[-80px] left-[-80px] w-[240px] h-[240px] bg-[#93C5FD]/20 blur-[90px] rounded-full" />
 
-    <div className="relative overflow-hidden rounded-[38px] bg-gradient-to-r from-[#16265E] via-[#1E3A8A] to-[#4F8CC9] px-[28px] sm:px-[45px] lg:px-[65px] py-[40px] sm:py-[52px] shadow-[0_20px_70px_rgba(22,38,94,0.18)]">
+            {/* CONTENT */}
+            <div className="relative z-10 flex flex-col xl:flex-row items-center justify-between gap-[35px]">
+              {/* LEFT */}
+              <div className="max-w-[720px]">
+                {/* LABEL */}
+                <span className="uppercase tracking-[4px] text-white/70 text-[11px] font-semibold">
+                  Contact Gurukrupa Electricals
+                </span>
 
-      {/* GLOW */}
-      <div className="absolute top-[-80px] right-[-80px] w-[240px] h-[240px] bg-white/10 blur-[90px] rounded-full" />
+                {/* HEADING */}
+                <h2 className="text-white text-[32px] sm:text-[48px] lg:text-[58px] font-black leading-[1.05] tracking-[-1px] mt-[16px]">
+                  Need Reliable
+                  <br />
+                  <span className="text-[#BFDBFE]">Electrical Solutions?</span>
+                </h2>
 
-      <div className="absolute bottom-[-80px] left-[-80px] w-[240px] h-[240px] bg-[#93C5FD]/20 blur-[90px] rounded-full" />
+                {/* TEXT */}
+                <p className="mt-[22px] text-white/75 text-[15px] sm:text-[17px] leading-[34px] max-w-[640px]">
+                  Contact us for premium electrical materials, modern lighting
+                  products, industrial solutions, and trusted technical support
+                  for every project.
+                </p>
+              </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 flex flex-col xl:flex-row items-center justify-between gap-[35px]">
-
-        {/* LEFT */}
-        <div className="max-w-[720px]">
-
-          {/* LABEL */}
-          <span className="uppercase tracking-[4px] text-white/70 text-[11px] font-semibold">
-            Contact Gurukrupa Electricals
-          </span>
-
-          {/* HEADING */}
-          <h2 className="text-white text-[32px] sm:text-[48px] lg:text-[58px] font-black leading-[1.05] tracking-[-1px] mt-[16px]">
-
-            Need Reliable
-            <br />
-
-            <span className="text-[#BFDBFE]">
-              Electrical Solutions?
-            </span>
-
-          </h2>
-
-          {/* TEXT */}
-          <p className="mt-[22px] text-white/75 text-[15px] sm:text-[17px] leading-[34px] max-w-[640px]">
-
-            Contact us for premium electrical materials,
-            modern lighting products, industrial solutions,
-            and trusted technical support for every project.
-
-          </p>
-
-        </div>
-
-        {/* BUTTONS */}
-        <div className="flex flex-col sm:flex-row items-center gap-[18px] w-full xl:w-auto">
-
-          {/* CALL BUTTON */}
-          <a
-            href="tel:+919923686402"
-            className="
+              {/* BUTTONS */}
+              <div className="flex flex-col sm:flex-row items-center gap-[18px] w-full xl:w-auto">
+                {/* CALL BUTTON */}
+                <a
+                  href="tel:+919923686402"
+                  className="
               group
               w-full sm:w-auto
               min-w-[230px]
@@ -303,48 +299,41 @@ export default function ElectricalWiresPage() {
               transition-all duration-500
               hover:-translate-y-1
             "
-          >
+                >
+                  <div className="w-[46px] h-[46px] rounded-full bg-[#16265E] flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="text-white"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 5a2 2 0 012-2h2.28a2 2 0 011.948 1.553l.516 2.323a2 2 0 01-.502 1.86l-1.27 1.27a16 16 0 006.586 6.586l1.27-1.27a2 2 0 011.86-.502l2.323.516A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </div>
 
-            <div className="w-[46px] h-[46px] rounded-full bg-[#16265E] flex items-center justify-center">
+                  <div className="text-left">
+                    <p className="text-[11px] uppercase tracking-[2px] text-[#4F8CC9]">
+                      Call Now
+                    </p>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 5a2 2 0 012-2h2.28a2 2 0 011.948 1.553l.516 2.323a2 2 0 01-.502 1.86l-1.27 1.27a16 16 0 006.586 6.586l1.27-1.27a2 2 0 011.86-.502l2.323.516A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
+                    <h4 className="text-[17px] font-bold">+91 99236 86402</h4>
+                  </div>
+                </a>
 
-            </div>
-
-            <div className="text-left">
-
-              <p className="text-[11px] uppercase tracking-[2px] text-[#4F8CC9]">
-                Call Now
-              </p>
-
-              <h4 className="text-[17px] font-bold">
-                +91 99236 86402
-              </h4>
-
-            </div>
-          </a>
-
-          {/* WHATSAPP BUTTON */}
-          <a
-            href="https://wa.me/919923686402"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
+                {/* WHATSAPP BUTTON */}
+                <a
+                  href="https://wa.me/919923686402"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
               group
               w-full sm:w-auto
               min-w-[230px]
@@ -361,40 +350,32 @@ export default function ElectricalWiresPage() {
               transition-all duration-500
               hover:-translate-y-1
             "
-          >
+                >
+                  <div className="w-[46px] h-[46px] rounded-full bg-white/15 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M20.52 3.48A11.91 11.91 0 0012.06 0C5.5 0 .17 5.33.17 11.89c0 2.1.55 4.16 1.6 5.98L0 24l6.3-1.65a11.9 11.9 0 005.76 1.47h.01c6.56 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.44-8.45z" />
+                    </svg>
+                  </div>
 
-            <div className="w-[46px] h-[46px] rounded-full bg-white/15 flex items-center justify-center">
+                  <div className="text-left">
+                    <p className="text-[11px] uppercase tracking-[2px] text-white/70">
+                      WhatsApp
+                    </p>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="21"
-                height="21"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M20.52 3.48A11.91 11.91 0 0012.06 0C5.5 0 .17 5.33.17 11.89c0 2.1.55 4.16 1.6 5.98L0 24l6.3-1.65a11.9 11.9 0 005.76 1.47h.01c6.56 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.44-8.45z" />
-              </svg>
-
+                    <h4 className="text-[17px] font-bold">Chat With Us</h4>
+                  </div>
+                </a>
+              </div>
             </div>
-
-            <div className="text-left">
-
-              <p className="text-[11px] uppercase tracking-[2px] text-white/70">
-                WhatsApp
-              </p>
-
-              <h4 className="text-[17px] font-bold">
-                Chat With Us
-              </h4>
-
-            </div>
-          </a>
-
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
     </section>
   );
 }

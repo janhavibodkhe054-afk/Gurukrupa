@@ -89,20 +89,20 @@ export default function AboutCompanySection() {
             </p>
 
             {/* DESCRIPTION */}
-            <div className="mt-[30px] sm:mt-[45px] space-y-[16px] sm:space-y-[20px] text-justify">
+            <div className="mt-[20px] sm:mt-[35px] space-y-[10px] sm:space-y-[10px] text-justify">
 
-              <p className="text-[#5B6475] text-[14px] sm:text-[16px] md:text-[17px] leading-[28px] sm:leading-[34px]">
+              <p className="text-black text-[14px] sm:text-[16px] md:text-[17px] leading-[28px] sm:leading-[34px]">
                 Gurukrupa Electricals & Light House is a trusted destination for premium
                 electrical materials including decorative lighting, switches, wires, cables,
                 MCBs, and industrial-grade electrical products.
               </p>
 
-              <p className="text-[#5B6475] text-[14px] sm:text-[16px] md:text-[17px] leading-[28px] sm:leading-[34px]">
+              <p className="text-black text-[14px] sm:text-[16px] md:text-[17px] leading-[28px] sm:leading-[34px]">
                 We serve residential, commercial, and industrial projects with a strong focus
                 on quality, affordability, and long-term reliability.
               </p>
 
-              <p className="text-[#5B6475] text-[14px] sm:text-[16px] md:text-[17px] leading-[28px] sm:leading-[34px]">
+              <p className="text-black text-[14px] sm:text-[16px] md:text-[17px] leading-[28px] sm:leading-[34px]">
                 Our mission is to bring complete electrical solutions under one roof with
                 trusted brands and expert support.
               </p>

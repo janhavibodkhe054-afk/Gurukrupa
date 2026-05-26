@@ -19,7 +19,7 @@ export default function BrandsSection() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F7F9FC] py-[100px] overflow-hidden">
+    <section className="relative w-full bg-[#F7F9FC] py-[50px] overflow-hidden">
 
       {/* ORANGE BLUSH */}
       <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-orange-400/10 blur-[120px] rounded-full" />
@@ -49,7 +49,7 @@ export default function BrandsSection() {
               Trusted Brands
             </span>
 
-            <h2 className="text-[42px] md:text-[68px] font-bold text-[#1B255A] leading-[1.05] mt-[18px]">
+            <h2 className="text-[42px] md:text-[68px] font-bold text-[#1B255A] leading-[1.05] mt-[10px]">
               Trusted Brands
               <br />
               We Deal In
@@ -59,7 +59,7 @@ export default function BrandsSection() {
           {/* RIGHT */}
           <div>
 
-            <p className="text-gray-600 text-[18px] leading-[34px]">
+            <p className="text-gray-900 text-[18px] leading-[30px] -mt-10 sm:mt-0">
               We provide premium electrical and lighting
               products from industry-leading brands known
               for quality, safety, innovation, and reliable

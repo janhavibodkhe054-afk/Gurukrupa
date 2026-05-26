@@ -112,7 +112,7 @@ Wide availability of branded electrical products. After-sales support is also ve
             <div className="w-24 h-[4px] rounded-full bg-gradient-to-r from-[#4F8CC9] to-[#16265E] mt-5" />
           </div>
 
-          <p className="text-gray-500 text-[15px] sm:text-[16px] leading-[30px] max-w-[540px]">
+          <p className="text-gray-900 text-[15px] sm:text-[16px] leading-[30px] max-w-[540px]">
             Trusted by homeowners, electricians, contractors,
             and industries for premium electrical materials and
             modern lighting solutions.
@@ -173,7 +173,7 @@ Wide availability of branded electrical products. After-sales support is also ve
                 </div>
 
                 {/* TEXT */}
-                <p className="text-gray-600 text-[15px] leading-[30px] whitespace-pre-line relative z-10">
+                <p className="text-gray-900 text-[15px] leading-[30px] whitespace-pre-line relative z-10">
                   “{item.text}”
                 </p>
 

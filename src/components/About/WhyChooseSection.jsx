@@ -150,7 +150,7 @@ export default function WhyChooseSection() {
                     {item.title}
                   </h3>
 
-                  <p className="text-[#6F7A86] text-[14px] sm:text-[15px] leading-[28px] mt-[6px]">
+                  <p className="text-black text-[14px] sm:text-[15px] leading-[28px] mt-[6px]">
                     {item.text}
                   </p>
                 </div>

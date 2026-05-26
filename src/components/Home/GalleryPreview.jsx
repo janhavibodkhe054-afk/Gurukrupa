@@ -21,7 +21,7 @@ const navigate = useNavigate();
   ];
 
   return (
-    <section className="relative w-full bg-white py-[100px] overflow-hidden">
+    <section className="relative w-full bg-white py-[70px] overflow-hidden">
 
       {/* BLUSH */}
       <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-orange-300/10 blur-[120px] rounded-full" />
@@ -58,7 +58,7 @@ const navigate = useNavigate();
           {/* RIGHT */}
           <div>
 
-            <p className="text-gray-600 text-[18px] leading-[34px]">
+            <p className="text-gray-900 text-[18px] leading-[34px] -mt-10 sm:mt-0">
               Explore our showroom, premium product
               displays, modern lighting collections,
               decorative lights, modular accessories,
