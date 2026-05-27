@@ -105,9 +105,9 @@ export default function PremiumNavbar() {
               <div className="absolute inset-0 bg-orange-500 blur-3xl opacity-20 group-hover:opacity-40 transition duration-500" />
 
               <img
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="logo"
-                className="relative w-[120px] object-contain transition-transform duration-500 group-hover:scale-105"
+                className="relative w-[96px] object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           </a>
