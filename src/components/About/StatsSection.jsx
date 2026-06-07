@@ -11,23 +11,23 @@ export default function PremiumStatsSection() {
   const stats = [
     {
       icon: <BriefcaseBusiness size={28} strokeWidth={1.8} />,
-      number: "1.25k",
-      label: "Projects",
+      number: "10+",
+      label: "Years Experience",
     },
     {
       icon: <Users size={28} strokeWidth={1.8} />,
-      number: "1.24k",
-      label: "Clients",
+      number: "5000+",
+      label: "Product Delivered",
     },
     {
       icon: <Lightbulb size={28} strokeWidth={1.8} />,
-      number: "250+",
-      label: "Products",
+      number: "2000+",
+      label: "Happy Customer",
     },
     {
       icon: <ShieldCheck size={28} strokeWidth={1.8} />,
-      number: "100%",
-      label: "Quality",
+      number: "100+",
+      label: "Trusted Brands",
     },
   ];
 

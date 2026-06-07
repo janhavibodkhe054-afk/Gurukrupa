@@ -1,122 +1,141 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
-export default function FounderMessageSection() {
+export default function FounderSection() {
+  const points = [
+    "Premium Electrical Products",
+    "Trusted Brand Partnerships",
+    "Expert Customer Support",
+    "Quality & Reliability",
+  ];
+
   return (
-    <section className="relative w-full bg-[#F8FAFC] overflow-hidden py-[90px] md:py-[120px]">
+    <section className="relative w-full bg-white py-10 md:py-16 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-blue-100 blur-[120px] rounded-full opacity-50" />
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-orange-100 blur-[120px] rounded-full opacity-50" />
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-[-180px] right-[-100px] w-[380px] h-[380px] bg-[#4F8CC9]/10 blur-[140px]" />
+      <div className="relative z-10 max-w-[1250px] mx-auto px-5 lg:px-10">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
+          {/* LEFT CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-[#F28C28] uppercase tracking-[4px] text-sm font-semibold">
+              Founder Message
+            </span>
 
-      <div className="absolute bottom-[-180px] left-[-100px] w-[380px] h-[380px] bg-[#F28C28]/10 blur-[140px]" />
+            <h2 className="text-[#16265E] text-[28px] md:text-[44px] leading-[1.1] font-bold mt-2">
+              Building Trust Through Quality & Service
+            </h2>
 
-      {/* GRID PATTERN */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="w-full h-full bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:70px_70px]" />
-      </div>
+            <div className="w-[90px] h-[5px] rounded-full bg-gradient-to-r from-[#F28C28] to-[#4F8CC9] mt-4" />
 
-      <div className="relative z-10 max-w-[1250px] mx-auto px-[18px] sm:px-[25px] lg:px-[40px]">
+            <p className="text-[#555] text-base md:text-lg leading-relaxed mt-2">
+              At Gurukrupa Electricals & Light House, our commitment has always
+              been to provide premium electrical products, dependable service,
+              and long-term customer satisfaction.
+            </p>
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 60,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          viewport={{ once: true }}
-          className="grid lg:grid-cols-[380px_1fr] gap-[50px] items-center"
-        >
+            {/* POINTS */}
+            <div className="grid sm:grid-cols-2 gap-5 mt-4">
+              {points.map((item, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ x: 6 }}
+                  className="flex items-center gap-3"
+                >
+                  <CheckCircle2 size={20} className="text-[#F28C28]" />
+                  <span className="text-[#16265E] font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </div>
 
-          {/* LEFT IMAGE */}
-          <div className="relative flex justify-center lg:justify-start">
-
-            {/* BLUE GLOW */}
-            <div className="absolute w-[280px] h-[280px] bg-[#4F8CC9]/20 blur-[90px] rounded-full" />
-
-            {/* IMAGE BOX */}
-            <div className="relative bg-white p-[12px] rounded-[30px] shadow-[0_20px_60px_rgba(15,23,42,0.12)] border border-[#E5EAF4]">
-
-              <img
-                src="/founder.jpeg"
-                alt="Founder"
-                className="w-[300px] sm:w-[340px] md:w-[360px] h-[420px] sm:h-[470px] object-cover rounded-[24px]"
-              />
-
-              {/* NAME BADGE */}
-              <div className="absolute bottom-[20px] left-[20px] right-[20px] bg-white/90 backdrop-blur-md rounded-[18px] px-[20px] py-[16px] shadow-lg border border-white/40">
-
-                <h4 className="text-[#0F172A] text-[20px] font-bold">
+            {/* FOUNDER CARD */}
+            <div className="mt-8 bg-[#F8FAFF] border border-[#DCE8FF] rounded-[24px] p-6 flex items-center gap-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+              <div>
+                <h4 className="text-[#16265E] text-[24px] font-bold">
                   Mr. Hanumant Khandekar
                 </h4>
 
-                <p className="text-[#4F8CC9] text-[13px] uppercase tracking-[2px] mt-1 font-medium">
-                  Founder & Director
+                <p className="text-[#777] mt-1">
+                  Founder – Gurukrupa Electricals
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* RIGHT CONTENT */}
-          <div className="relative">
+          {/* RIGHT IMAGE COLLAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+            className="relative group"
+          >
+            {/* GLOW */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-[#4F8CC9]/20 via-[#F28C28]/20 to-[#4F8CC9]/20 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700" />
 
-            {/* BIG BG TEXT */}
-            <div className="absolute top-[-40px] left-0 text-[70px] sm:text-[120px] md:text-[160px] font-bold text-[#0F172A]/[0.03] leading-none select-none">
-              FOUNDER
-            </div>
+            {/* IMAGE CARD */}
+            <motion.div
+              whileHover={{
+                rotateY: -5,
+                rotateX: 2,
+                y: -10,
+              }}
+              transition={{ duration: 0.4 }}
+              className="relative rounded-[36px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.18)]"
+              style={{
+                transformStyle: "preserve-3d",
+              }}
+            >
+              <img
+                src="/founder.jpeg"
+                alt="Founder"
+                className="w-full h-[450px] md:h-[620px] object-cover transition duration-700 group-hover:scale-110 group-hover:rotate-1"
+              />
 
-            {/* TOP LINE */}
-            <div className="flex items-center gap-[14px]">
-              <div className="w-[70px] h-[3px] bg-gradient-to-r from-[#F28C28] to-[#4F8CC9] rounded-full" />
+              {/* PREMIUM OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#16265E]/70 via-[#16265E]/10 to-transparent" />
 
-              <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[12px] sm:text-[13px] font-semibold">
-                Founder Message
-              </span>
-            </div>
+              {/* TOP ACCENT */}
+              <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-[#F28C28] via-[#4F8CC9] to-[#F28C28]" />
 
-            {/* HEADING */}
-            <h2 className="text-[#1B255A] text-[36px] sm:text-[52px] md:text-[68px] font-bold leading-[1.05] mt-[24px]">
-              Message From
-              <br />
-              Founder
-            </h2>
-
-            {/* MESSAGE BOX */}
-            <div className="relative mt-[50px] border-l-[4px] border-[#F28C28] pl-[24px] sm:pl-[35px]">
-
-              {/* QUOTE ICON */}
-              <div className="absolute -top-[12px] left-[-18px] w-[42px] h-[42px] rounded-full bg-[#0F172A] flex items-center justify-center shadow-lg">
-                <Quote size={18} className="text-[#F28C28]" />
+              {/* SHINE EFFECT */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -left-[120%] top-0 w-[60%] h-full bg-white/10 skew-x-[-25deg] group-hover:left-[140%] transition-all duration-[1400ms]" />
               </div>
+            </motion.div>
 
-              {/* MESSAGE */}
-              <p className="text-[#334155] text-[20px] sm:text-[28px] md:text-[34px] leading-[1.7] font-light max-w-[950px]">
-                “Our goal is to provide customers with genuine electrical
-                products, the latest lighting solutions, and dependable service
-                under one roof.”
+            {/* EXPERIENCE CARD */}
+            <motion.div
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+              }}
+              className="absolute bottom-8 left-8 backdrop-blur-xl bg-white/90 border border-white/60 rounded-[28px] px-8 py-6 shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+            >
+              <h3 className="text-[52px] font-black leading-none bg-gradient-to-r from-[#4F8CC9] to-[#16265E] bg-clip-text text-transparent">
+                10+
+              </h3>
+
+              <p className="text-[#16265E] text-lg font-bold mt-2">
+                Years Experience
               </p>
 
-              {/* FOUNDER NAME */}
-              <div className="mt-[35px]">
-                <h4 className="text-[#1B255A] text-[22px] sm:text-[28px] font-bold">
-                  — Mr. Hanumant Khandekar
-                </h4>
+              <div className="w-12 h-[3px] rounded-full bg-[#F28C28] mt-3" />
+            </motion.div>
 
-                <p className="text-[#64748B] text-[14px] sm:text-[16px] mt-[6px] tracking-[2px] uppercase">
-                  Founder • Gurukrupa Electricals & Light House
-                </p>
-              </div>
+            
 
-            </div>
-          </div>
-
-        </motion.div>
+            {/* DECORATIVE CIRCLE */}
+            <div className="absolute -bottom-8 -right-8 w-40 h-40 border-[20px] border-[#F28C28]/10 rounded-full" />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

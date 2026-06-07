@@ -1,319 +1,263 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function PremiumNavbar() {
   const [open, setOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const currentPath = window.location.pathname;
+
   const products = [
-    {
-      name: "Electrical Wires & Cables",
-      link: "/electrical",
-    },
-    {
-      name: "Switches & Modular Accessories",
-      link: "/switches",
-    },
-    {
-      name: "LED Lights",
-      link: "/led-lights",
-    },
-    {
-      name: "Fancy Lighting",
-      link: "/fancy-lighting",
-    },
-    {
-      name: "Industrial Electrical Materials",
-      link: "/industrial",
-    },
+    { name: "Electrical Wires & Cables", link: "/electrical" },
+    { name: "Switches & Modular Accessories", link: "/switches" },
+    { name: "LED Lights", link: "/led-lights" },
+    { name: "Fancy Lighting", link: "/fancy-lighting" },
+    { name: "Industrial Electrical Materials", link: "/industrial" },
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActive = (path) => currentPath === path;
+
+  const SocialIcons = () => (
+    <div className="hidden lg:flex items-center gap-3">
+      <a
+        href="https://facebook.com"
+        target="_blank"
+        className="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition"
+      >
+        <FaFacebookF size={14} />
+      </a>
+
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        className="w-9 h-9 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 text-white flex items-center justify-center hover:scale-110 transition"
+      >
+        <FaInstagram size={14} />
+      </a>
+
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        className="w-9 h-9 rounded-full bg-[#0A66C2] text-white flex items-center justify-center hover:scale-110 transition"
+      >
+        <FaLinkedinIn size={14} />
+      </a>
+    </div>
+  );
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.18)]"
-          : "bg-white shadow-[0_6px_25px_rgba(0,0,0,0.10)]"
+          ? "bg-white/90 backdrop-blur-xl shadow-[0_15px_50px_rgba(0,0,0,0.12)]"
+          : "bg-white shadow-[0_6px_25px_rgba(0,0,0,0.08)]"
       }`}
     >
       {/* TOP BAR */}
-      <div className="bg-[#071426] overflow-hidden border-b border-[#16345C]">
-        <div className="relative flex items-center">
-          {/* RUNNING TEXT */}
-          <div className="marquee whitespace-nowrap py-3">
-            <div className="marquee-content flex items-center gap-16">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <span className="w-2 h-2 rounded-full bg-[#F28C28]" />
+      <div className="bg-[#071426] border-b border-[#16345C] overflow-hidden">
+        <div className="flex animate-[marquee_22s_linear_infinite] whitespace-nowrap py-3">
+          <div className="flex items-center gap-16 min-w-max text-white text-sm font-medium tracking-wide">
+            <span>• Premium Electrical Materials</span>
+            <span>• High Quality LED Lighting</span>
+            <span>• Decorative Fancy Lights</span>
+            <span>• Industrial Grade Solutions</span>
+            <span>• Trusted Electrical Brand</span>
 
-                  <p className="text-white/90 text-[14px] md:text-[15px] tracking-wide font-medium">
-                    Premium Electrical Materials • LED Lighting • Fancy Lights •
-                    Industrial Solutions
-                  </p>
-                </div>
-              ))}
-            </div>
+            <span>• Premium Electrical Materials</span>
+            <span>• High Quality LED Lighting</span>
+            <span>• Decorative Fancy Lights</span>
+            <span>• Industrial Grade Solutions</span>
+            <span>• Trusted Electrical Brand</span>
           </div>
-
-          {/* WHATSAPP */}
-          <a
-            href="https://wa.me/919923686402"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-        hidden lg:flex absolute right-0 top-0 h-full
-        items-center gap-3
-        bg-gradient-to-r from-[#0B1E36] to-[#12345B]
-        px-8 border-l border-[#234B7C]
-        hover:from-[#F28C28] hover:to-[#d97706]
-        transition-all duration-500 group
-      "
-          >
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                alt="WhatsApp"
-                className="w-6 h-6"
-              />
-            </div>
-
-            <span className="text-white font-semibold tracking-wide">
-              Chat With Us
-            </span>
-          </a>
         </div>
       </div>
 
-      {/* MAIN NAVBAR */}
+      {/* MAIN NAV */}
       <nav className="max-w-[1500px] mx-auto px-5 lg:px-10">
-        <div className="h-[85px] flex items-center justify-between">
+        <div className="h-[88px] flex items-center justify-between">
           {/* LOGO */}
-          <a href="/" className="flex items-center group">
-            <div className="relative">
-              {/* GLOW */}
-              <div className="absolute inset-0 bg-orange-500 blur-3xl opacity-20 group-hover:opacity-40 transition duration-500" />
-
-              <img
-                src="/logo.jpeg"
-                alt="logo"
-                className="relative w-[96px] object-contain transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
+          <a href="/">
+            <img
+              src="/logo.png"
+              className="w-[90px] hover:scale-105 transition"
+            />
           </a>
 
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-10">
-            {/* HOME */}
             <a
               href="/"
-              className="relative text-[16px] font-semibold text-black group"
+              className={`font-semibold pb-1 border-b-2 ${
+                isActive("/")
+                  ? "border-orange-500 text-black"
+                  : "border-transparent text-gray-600 hover:text-black"
+              }`}
             >
               Home
-              <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-orange-500 scale-x-100 origin-left" />
             </a>
 
-            {/* ABOUT */}
             <a
               href="/about"
-              className="relative text-[16px] font-semibold text-gray-700 hover:text-black transition duration-300 group"
+              className={`font-semibold pb-1 border-b-2 ${
+                isActive("/about")
+                  ? "border-orange-500 text-black"
+                  : "border-transparent text-gray-600 hover:text-black"
+              }`}
             >
               About Us
-              <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-left transition duration-300" />
             </a>
 
             {/* PRODUCTS */}
             <div className="relative group">
-              <button className="flex items-center gap-1 relative text-[16px] font-semibold text-gray-700 hover:text-black transition duration-300">
-                Products
-                <ChevronDown
-                  size={18}
-                  className="group-hover:rotate-180 transition duration-300"
-                />
-                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-left transition duration-300" />
+              <button className="flex items-center font-semibold text-gray-700 hover:text-black">
+                Products <ChevronDown size={16} />
               </button>
 
-              {/* DROPDOWN */}
-              <div className="absolute top-[65px] left-1/2 -translate-x-1/2 w-[390px] bg-white border border-gray-100 rounded-3xl shadow-[0_25px_80px_rgba(0,0,0,0.15)] opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-4">
-                <div className="space-y-2">
-                  {products.map((item, index) => (
-                    <a
-                      key={index}
-                      href={item.link}
-                      className="flex items-center justify-between px-5 py-4 rounded-2xl hover:bg-orange-50 transition-all duration-300 group/item"
-                    >
-                      <span className="text-[15px] font-medium text-gray-700 group-hover/item:text-orange-500 transition">
-                        {item.name}
-                      </span>
-
-                      <ArrowUpRight
-                        size={18}
-                        className="opacity-0 group-hover/item:opacity-100 translate-y-2 group-hover/item:translate-y-0 transition-all duration-300 text-orange-500"
-                      />
-                    </a>
-                  ))}
-                </div>
+              <div className="absolute top-full mt-1 left-1/2 -translate-x-1/2 w-[360px] bg-white shadow-2xl rounded-2xl opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 p-3 z-50">
+                {products.map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.link}
+                    className="flex justify-between px-4 py-3 hover:bg-orange-50 rounded-xl"
+                  >
+                    {item.name}
+                    <ArrowUpRight size={16} />
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* BRANDS */}
             <a
               href="/brands"
-              className="relative text-[16px] font-semibold text-gray-700 hover:text-black transition duration-300 group"
+              className={`font-semibold pb-1 border-b-2 ${
+                isActive("/brands")
+                  ? "border-orange-500 text-black"
+                  : "border-transparent text-gray-600 hover:text-black"
+              }`}
             >
               Brands
-              <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-left transition duration-300" />
             </a>
 
-            {/* GALLERY */}
             <a
               href="/gallery"
-              className="relative text-[16px] font-semibold text-gray-700 hover:text-black transition duration-300 group"
+              className={`font-semibold pb-1 border-b-2 ${
+                isActive("/gallery")
+                  ? "border-orange-500 text-black"
+                  : "border-transparent text-gray-600 hover:text-black"
+              }`}
             >
               Gallery
-              <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-left transition duration-300" />
             </a>
 
-            {/* CONTACT */}
             <a
               href="/contact"
-              className="relative text-[16px] font-semibold text-gray-700 hover:text-black transition duration-300 group"
+              className={`font-semibold pb-1 border-b-2 ${
+                isActive("/contact")
+                  ? "border-orange-500 text-black"
+                  : "border-transparent text-gray-600 hover:text-black"
+              }`}
             >
               Contact
-              <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-left transition duration-300" />
             </a>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden w-12 h-12 rounded-full bg-[#16275F] text-white flex items-center justify-center"
-          >
+          {/* RIGHT SIDE */}
+          <div className="hidden lg:flex items-center gap-5">
+            <SocialIcons />
+
+            <a
+              href="https://wa.me/919923686402"
+              target="_blank"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-full flex items-center gap-2 font-semibold hover:scale-105 transition"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                className="w-5 h-5 bg-white rounded-full"
+              />
+              Chat With Us
+            </a>
+          </div>
+
+          {/* MOBILE BUTTON */}
+          <button onClick={() => setOpen(!open)} className="lg:hidden">
             {open ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU FIXED */}
       <div
         className={`lg:hidden bg-white border-t overflow-hidden transition-all duration-500 ${
-          open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-screen" : "max-h-0"
         }`}
       >
-        <div className="px-6 py-6 flex flex-col">
-          {/* HOME */}
-          <a href="/" className="py-5 border-b text-[18px] font-semibold">
-            Home
-          </a>
+        <div className="px-6 py-5 flex flex-col gap-4">
+          <a href="/">Home</a>
+          <a href="/about">About Us</a>
 
-          {/* ABOUT */}
-          <a href="/about" className="py-5 border-b text-[18px] font-semibold">
-            About Us
-          </a>
+          {/* MOBILE PRODUCTS FIX */}
+          <button
+            onClick={() => setProductOpen(!productOpen)}
+            className="flex justify-between items-center font-semibold"
+          >
+            Products
+            <ChevronDown
+              className={`${productOpen ? "rotate-180" : ""} transition`}
+            />
+          </button>
 
-          {/* PRODUCTS */}
-          <div className="border-b">
-            <button
-              onClick={() => setProductOpen(!productOpen)}
-              className="w-full py-5 flex items-center justify-between text-[18px] font-semibold"
-            >
-              Products
-              <ChevronDown
-                size={22}
-                className={`transition duration-300 ${
-                  productOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            <div
-              className={`overflow-hidden transition-all duration-500 ${
-                productOpen ? "max-h-[500px] pb-4" : "max-h-0"
-              }`}
-            >
-              <div className="bg-gray-50 rounded-2xl overflow-hidden">
-                {products.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.link}
-                    className="block px-6 py-4 text-[15px] border-b last:border-none"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
+          <div
+            className={`overflow-hidden transition-all duration-300 ${
+              productOpen ? "max-h-60 mt-2" : "max-h-0"
+            }`}
+          >
+            <div className="bg-gray-50 rounded-xl p-3 flex flex-col gap-2">
+              {products.map((p, i) => (
+                <a
+                  key={i}
+                  href={p.link}
+                  className="text-sm text-gray-700 py-2 border-b last:border-none"
+                >
+                  {p.name}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* BRANDS */}
-          <a href="/brands" className="py-5 border-b text-[18px] font-semibold">
-            Brands
-          </a>
+          <a href="/brands">Brands</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/contact">Contact</a>
 
-          {/* GALLERY */}
-          <a
-            href="/gallery"
-            className="py-5 border-b text-[18px] font-semibold"
-          >
-            Gallery
-          </a>
-
-          {/* CONTACT */}
-          <a
-            href="/contact"
-            className="py-5 border-b text-[18px] font-semibold"
-          >
-            Contact
-          </a>
-
-          {/* MOBILE WHATSAPP */}
           <a
             href="https://wa.me/919923686402"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 bg-green-500 hover:bg-green-600 text-white rounded-2xl py-4 flex items-center justify-center gap-3 font-semibold transition"
+            className="bg-green-500 text-white py-3 rounded-xl text-center font-semibold mt-3"
           >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-              alt=""
-              className="w-6 h-6 bg-white rounded-full"
-            />
             Chat With Us
           </a>
         </div>
       </div>
 
-      {/* CUSTOM CSS */}
+      {/* ANIMATION */}
       <style jsx>{`
-        .marquee {
-          width: 100%;
-          overflow: hidden;
-        }
-
-        .marquee-content {
-          display: inline-flex;
-          min-width: 200%;
-          animation: marquee 22s linear infinite;
-        }
-
         @keyframes marquee {
           0% {
-            transform: translateX(0%);
+            transform: translateX(0);
           }
-
           100% {
             transform: translateX(-50%);
           }
+        }
+
+        .animate-[marquee_22s_linear_infinite] {
+          animation: marquee 22s linear infinite;
         }
       `}</style>
     </header>

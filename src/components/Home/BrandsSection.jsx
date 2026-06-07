@@ -19,7 +19,7 @@ export default function BrandsSection() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F7F9FC] py-[50px] overflow-hidden">
+    <section className="relative w-full bg-[#F7F9FC] py-16 md:py-20 overflow-hidden">
 
       {/* ORANGE BLUSH */}
       <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-orange-400/10 blur-[120px] rounded-full" />
@@ -30,17 +30,12 @@ export default function BrandsSection() {
       <div className="absolute top-[20%] right-[10%] w-[280px] h-[280px] bg-[#4F8CC9]/10 blur-[120px] rounded-full" />
 
       {/* BACKGROUND TEXT */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-
-        <h1 className="text-[80px] md:text-[160px] lg:text-[220px] font-black text-[#111111]/[0.03] uppercase tracking-[10px]">
-          Brands
-        </h1>
-      </div>
+      
 
       <div className="relative max-w-[1450px] mx-auto px-[20px] md:px-[40px] lg:px-[60px]">
 
         {/* TOP */}
-        <div className="grid lg:grid-cols-2 gap-[70px] items-center mb-[80px]">
+        <div className="grid lg:grid-cols-2 gap-[70px] items-center mb-[40px]">
 
           {/* LEFT */}
           <div>
@@ -49,9 +44,9 @@ export default function BrandsSection() {
               Trusted Brands
             </span>
 
-            <h2 className="text-[42px] md:text-[68px] font-bold text-[#1B255A] leading-[1.05] mt-[10px]">
+            <h2 className="text-[28px] md:text-[44px] leading-[1.1] font-bold text-[#1B255A] mt-[10px]">
               Trusted Brands
-              <br />
+              
               We Deal In
             </h2>
           </div>
@@ -59,7 +54,7 @@ export default function BrandsSection() {
           {/* RIGHT */}
           <div>
 
-            <p className="text-gray-900 text-[18px] leading-[30px] -mt-10 sm:mt-0">
+            <p className="text-gray-900 text-base md:text-lg leading-[30px] -mt-12 sm:mt-0">
               We provide premium electrical and lighting
               products from industry-leading brands known
               for quality, safety, innovation, and reliable
@@ -67,45 +62,8 @@ export default function BrandsSection() {
               applications.
             </p>
 
-            {/* FEATURES */}
-            <div className="flex flex-wrap gap-[16px] mt-[30px]">
-
-              <div className="flex items-center gap-[10px] bg-white border border-[#E8EEF5] px-[18px] py-[12px] rounded-full shadow-sm">
-
-                <ShieldCheck
-                  size={18}
-                  className="text-[#4F8CC9]"
-                />
-
-                <span className="text-[15px] font-medium text-[#111111]">
-                  Genuine Products
-                </span>
-              </div>
-
-              <div className="flex items-center gap-[10px] bg-white border border-[#E8EEF5] px-[18px] py-[12px] rounded-full shadow-sm">
-
-                <Award
-                  size={18}
-                  className="text-[#4F8CC9]"
-                />
-
-                <span className="text-[15px] font-medium text-[#111111]">
-                  Trusted Brands
-                </span>
-              </div>
-
-              <div className="flex items-center gap-[10px] bg-white border border-[#E8EEF5] px-[18px] py-[12px] rounded-full shadow-sm">
-
-                <Zap
-                  size={18}
-                  className="text-[#4F8CC9]"
-                />
-
-                <span className="text-[15px] font-medium text-[#111111]">
-                  Premium Quality
-                </span>
-              </div>
-            </div>
+           
+            
           </div>
         </div>
 

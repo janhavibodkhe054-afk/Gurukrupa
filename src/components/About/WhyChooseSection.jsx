@@ -63,11 +63,11 @@ export default function WhyChooseSection() {
             </div>
 
             {/* TITLE */}
-            <h2 className="text-[#0B1C3D] text-[30px] sm:text-[40px] md:text-[54px] font-bold leading-[1.1] mt-[22px] max-w-[650px]">
+            <h2 className="text-[#0B1C3D] text-[28px] md:text-[44px] leading-[1.1] font-bold mt-[22px] max-w-[650px]">
               Smart, Reliable &
-              <br />
+              
               Modern Electrical
-              <br />
+              
               Solutions
             </h2>
 
@@ -76,7 +76,7 @@ export default function WhyChooseSection() {
 
               {/* IMAGE */}
               <img
-                src="https://www.bria.com.ph/wp-content/uploads/2022/04/Benefits-of-Using-LED-Lights-and-Bulbs.png"
+                src="/chooseus.jpg"
                 alt=""
                 className="w-full h-[320px] sm:h-[420px] object-cover group-hover:scale-105 transition duration-700"
               />
@@ -150,7 +150,7 @@ export default function WhyChooseSection() {
                     {item.title}
                   </h3>
 
-                  <p className="text-black text-[14px] sm:text-[15px] leading-[28px] mt-[6px]">
+                  <p className="text-black text-base md:text-lg mt-[6px]">
                     {item.text}
                   </p>
                 </div>

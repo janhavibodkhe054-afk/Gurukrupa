@@ -16,7 +16,7 @@ export default function FeatureCards() {
       title: "Quality Products",
       text: "Premium quality wires, switches, cables, and electrical materials from trusted brands.",
       image:
-        "https://scontent.fnag6-3.fna.fbcdn.net/v/t39.30808-6/503201476_677277861883586_1610990751627928955_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=jrakwBIc1IQQ7kNvwEQ2LR_&_nc_oc=AdqIImqNY2SoWMuhTiw9B46T5Mbo--8lCf6MAlwLRikrPkLGSPhbR4834i-7LRVhx9s&_nc_zt=23&_nc_ht=scontent.fnag6-3.fna&_nc_gid=Mlw92GyOgMApNsPTi2v4KQ&_nc_ss=7b289&oh=00_Af7EdiQ3c5IbwCs20BsnQA_6eVKqOocMZqo9tQml7aYlng&oe=6A1AD9BC",
+        "https://thumbs.dreamstime.com/b/different-separation-power-cables-showcase-close-up-industry-different-separation-power-cables-showcase-close-up-166085402.jpg",
     },
 
     {

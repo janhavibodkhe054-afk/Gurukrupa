@@ -7,18 +7,24 @@ import BrandsSection from '../components/Home/BrandsSection'
 import GalleryPreview from '../components/Home/GalleryPreview'
 import Testimonials from '../components/Home/Testimonials'
 import ContactCTA from '../components/Home/ContactCTA'
-import FeatureCards from '../components/Home/FeatureCards.jsx'
+import StatsSection from '../components/Home/StatsSection'
+import ServicesCircle from '../components/Home/ServicesCircle'
+import VisionMission from '../components/Home/VisionMission'
+
+
 
 const Home = () => {
   return (
     <div>
       <HeroSection/>
+      
       <AboutPreview/>
-      <FeatureCards/>
+      
       <ProductCategories/>
       <WhyChooseUs/>
       <BrandsSection/>
-      <GalleryPreview/>
+      <StatsSection/>
+      <VisionMission/>
       <Testimonials/>
       <ContactCTA/>
     </div>

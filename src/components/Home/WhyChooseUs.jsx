@@ -1,180 +1,165 @@
 import React from "react";
-import { motion } from "framer-motion";
 import {
+  Boxes,
   ShieldCheck,
-  Lightbulb,
   BadgeCheck,
   Wallet,
   Headphones,
-  Boxes,
+  Lightbulb,
 } from "lucide-react";
 
 export default function WhyChooseUs() {
-
   const features = [
     {
       icon: <Boxes size={24} />,
       title: "Wide Product Range",
-      desc:
-        "Complete electrical solutions for residential, commercial, and industrial needs.",
+      desc: "Complete electrical solutions for residential, commercial and industrial requirements.",
     },
-
     {
       icon: <ShieldCheck size={24} />,
       title: "Trusted Quality",
-      desc:
-        "Premium quality electrical materials from trusted brands.",
+      desc: "Premium quality electrical materials sourced from trusted brands.",
     },
-
     {
       icon: <BadgeCheck size={24} />,
       title: "Genuine Products",
-      desc:
-        "100% original branded electrical products with reliable performance.",
+      desc: "100% original branded products ensuring long-term reliability.",
     },
-
     {
       icon: <Wallet size={24} />,
       title: "Competitive Prices",
-      desc:
-        "Affordable pricing with excellent quality and value.",
+      desc: "Affordable pricing with exceptional quality and value.",
     },
-
     {
       icon: <Headphones size={24} />,
       title: "Customer Support",
-      desc:
-        "Professional guidance and friendly customer assistance.",
+      desc: "Professional guidance and dedicated customer assistance.",
     },
-
     {
       icon: <Lightbulb size={24} />,
       title: "Modern Lighting",
-      desc:
-        "Latest LED lights and decorative lighting collection available.",
+      desc: "Latest LED and decorative lighting solutions for every space.",
     },
   ];
 
   return (
-    <section className="relative w-full bg-[#0E0E0E] py-14 lg:py-16 overflow-hidden">
+    <section className="relative py-14 lg:py-20 bg-white overflow-hidden">
+      {/* Background Text */}
+      
 
-  {/* BACKGROUND IMAGE */}
-  <div
-    className="absolute inset-0"
-    style={{
-      backgroundImage:
-        "url('https://i.ytimg.com/vi/cZKZXpgASIE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAat4pDULIICfO9GbU822DtBnJrQA')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
-  />
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
+        {/* Heading */}
+        <div className="text-center mb-12 lg:mb-16">
+          <span className="uppercase tracking-[4px] text-[#f37021] font-semibold text-sm">
+            Why Choose Us
+          </span>
 
-  {/* DARK NAVY OVERLAY */}
-  <div className="absolute inset-0 bg-[#081120]/40" />
+          <h2 className="mt-4 text-[28px] md:text-[40px] lg:text-[48px] leading-tight font-bold text-[#16265E]">
+            Delivering Quality,
+            <br />
+            Reliability & Innovation
+          </h2>
+        </div>
 
-  {/* EXTRA NAVY GRADIENT */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#081120]/95 via-[#0B1E46]/80 to-[#16265E]/55" />
-
-  {/* BACKGROUND TEXT */}
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-
-    <h1 className="text-[70px] md:text-[140px] lg:text-[200px] font-black text-white/[0.05] uppercase tracking-[10px] select-none">
-      Gurukrupa
-    </h1>
-  </div>
-
-  {/* GRADIENT */}
-  <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(79,140,201,0.10),transparent_40%)]" />
-
-  <div className="relative max-w-[1450px] mx-auto px-5 lg:px-10">
-
-    {/* TOP */}
-    <div className="grid lg:grid-cols-3 gap-10 items-start">
-
-      {/* LEFT CONTENT */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-
-        <span className="uppercase tracking-[4px] text-[#4F8CC9] text-xs font-semibold">
-          Why Choose Us
-        </span>
-
-        <h2 className="text-[34px] md:text-[46px] font-bold text-white leading-tight mt-4">
-          Unmatched
-          <br />
-          Products.
-          <br />
-          Trusted Service.
-        </h2>
-
-        <p className="text-gray-300 text-[15px] leading-[28px] mt-6 max-w-md">
-          Gurukrupa Electricals & Light House delivers
-          premium quality electrical materials,
-          modern lighting solutions, and trusted
-          branded products with professional support.
-        </p>
-      </motion.div>
-
-      {/* RIGHT GRID */}
-      <div className="lg:col-span-2 grid md:grid-cols-2 gap-4 w-full">
-
-        {features.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.08,
-            }}
-            viewport={{ once: true }}
-            whileHover={{ y: -5 }}
-            className="group relative border border-white/10 hover:border-[#4F8CC9] bg-white/[0.04] backdrop-blur-md px-5 py-5 transition-all duration-500 w-full"
-          >
-
-            {/* NUMBER */}
-            <span className="absolute top-3 right-4 text-white/10 text-[24px] font-black">
-              0{index + 1}
-            </span>
-
-            {/* CONTENT */}
-            <div className="flex items-start gap-4">
-
-              {/* ICON */}
-              <motion.div
-                whileHover={{ scale: 1.08 }}
-                className="w-12 h-12 min-w-[48px] border border-white/10 group-hover:border-[#4F8CC9] rounded-lg flex items-center justify-center text-[#4F8CC9] transition duration-500 bg-[#0B1E46]/60"
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px_1fr] gap-10 lg:gap-12 items-center">
+          {/* LEFT FEATURES */}
+          <div className="space-y-8 lg:space-y-12">
+            {features.slice(0, 3).map((item, index) => (
+              <div
+                key={index}
+                className="
+                flex items-start gap-4
+                text-left
+                lg:text-right
+              "
               >
+                {/* Icon */}
+                <div
+                  className="
+                  w-14 h-14 lg:w-16 lg:h-16
+                  rounded-full
+                  border-2 border-[#f37021]/20
+                  bg-[#f37021]/5
+                  flex items-center justify-center
+                  text-[#f37021]
+                  flex-shrink-0
+                  lg:order-2
+                "
+                >
+                  {item.icon}
+                </div>
 
-                {item.icon}
-              </motion.div>
+                {/* Content */}
+                <div className="flex-1 lg:order-1">
+                  <h3 className="font-bold text-lg lg:text-xl text-[#16265E]">
+                    {item.title}
+                  </h3>
 
-              {/* TEXT */}
-              <div className="flex-1">
-
-                {/* TITLE */}
-                <h3 className="text-white text-[20px] font-semibold leading-snug">
-                  {item.title}
-                </h3>
-
-                {/* LINE */}
-                <div className="w-10 h-[2px] bg-[#4F8CC9] mt-3 mb-3 group-hover:w-16 transition-all duration-500" />
-
-                {/* DESC */}
-                <p className="text-gray-300 leading-[26px] text-[14px]">
-                  {item.desc}
-                </p>
+                  <p className="text-gray-600 mt-2 text-base md:text-lg">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            ))}
+          </div>
+
+          {/* CENTER IMAGE */}
+          <div className="relative order-first lg:order-none">
+            {/* Glow */}
+            <div className="absolute inset-0 bg-[#f37021]/10 blur-[80px] rounded-full" />
+
+            <img
+              src="/homechoose.avif"
+              alt="Electrical Expert"
+              className="
+                relative
+                z-10
+                w-full
+                max-w-[260px]
+                sm:max-w-[320px]
+                md:max-w-[380px]
+                lg:max-w-[450px]
+                mx-auto
+                object-contain
+              "
+            />
+          </div>
+
+          {/* RIGHT FEATURES */}
+          <div className="space-y-8 lg:space-y-12">
+            {features.slice(3, 6).map((item, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-4 text-left"
+              >
+                <div
+                  className="
+                  w-14 h-14 lg:w-16 lg:h-16
+                  rounded-full
+                  border-2 border-[#f37021]/20
+                  bg-[#f37021]/5
+                  flex items-center justify-center
+                  text-[#f37021]
+                  flex-shrink-0
+                "
+                >
+                  {item.icon}
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-lg lg:text-xl text-[#16265E]">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-600 mt-2 text-base md:text-lg">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   );
 }

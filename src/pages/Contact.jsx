@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
-
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function ContactPage() {
@@ -18,7 +17,6 @@ export default function ContactPage() {
     });
   };
 
-  // WHATSAPP SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -34,266 +32,183 @@ ${formData.message}
     `;
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      text,
+      text
     )}`;
 
     window.open(whatsappURL, "_blank");
   };
 
   return (
-    <section className="w-full bg-[#F7F8FA] overflow-hidden">
-      {/* TOP HERO */}
-      <div className="max-w-[1450px] mx-auto px-[20px] md:px-[35px] pt-[25px]">
-        <div className="relative h-[290px] md:h-[380px] rounded-[32px] overflow-hidden">
-          {/* IMAGE */}
-          <img
-            src="/contact.png"
-            alt=""
-            className="w-full h-full object-cover scale-105"
-          />
+    <section className="w-full bg-[#F8FAFC] overflow-hidden">
 
-          {/* OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/20" />
+      {/* ================= HERO ================= */}
+      <div className="relative h-[180px] md:h-[270px] overflow-hidden">
 
-          {/* BLUR */}
-          <div className="absolute top-[-120px] right-[-80px] w-[320px] h-[320px] bg-orange-400/20 blur-[120px] rounded-full" />
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('/ctabg.jpg')",
+          }}
+        />
 
-          {/* CONTENT */}
-          <div className="absolute inset-0 flex flex-col justify-between p-[28px] md:p-[55px]">
-            {/* TOP */}
-            <div className="flex items-start justify-between">
-              <div>
-                <span className="uppercase tracking-[4px] text-white/95 text-[20px] font-semibold">
-                  Gurukrupa Electricals
-                </span>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
 
-                <h1 className="text-white text-[46px] md:text-[80px] font-semibold tracking-tight leading-[0.9] mt-[14px]">
-  Contact
-</h1>
-              </div>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
 
-              <div className="hidden md:flex items-center gap-[10px]">
-                <button className="bg-white/10 backdrop-blur-md border border-white/20 px-[20px] py-[11px] rounded-full text-white text-[13px] uppercase tracking-[2px]">
-                  Home
-                </button>
+          
 
-                <button className="bg-white text-[#111111] px-[20px] py-[11px] rounded-full text-[13px] uppercase tracking-[2px] font-medium">
-                  Contact
-                </button>
-              </div>
-            </div>
+          <h1 className="text-white text-4xl md:text-6xl font-bold">
+            Contact Us
+          </h1>
 
-            {/* BOTTOM */}
-            <div className="flex items-end justify-between">
-              <p className="text-white/95 text-[15px] md:text-[18px] max-w-[650px] leading-[32px]">
-                Premium electrical materials, lighting solutions, modular
-                accessories, industrial products, and complete electrical
-                support under one roof.
-              </p>
-
-              <div className="hidden md:flex w-[58px] h-[58px] rounded-full bg-orange-500 items-center justify-center shadow-2xl">
-                <ArrowRight size={24} className="text-white rotate-90" />
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
-      {/* MAIN SECTION */}
-      <div className="relative max-w-[1450px] mx-auto px-[20px] md:px-[35px] py-[90px]">
-        {/* BLUSH */}
-        <div className="absolute top-[150px] left-[-120px] w-[320px] h-[320px] bg-[#4F8CC9]/10 blur-[120px] rounded-full" />
+      {/* ================= MAIN ================= */}
+      <div className="relative max-w-[1400px] mx-auto px-[20px] md:px-[40px] py-[90px]">
 
-        <div className="absolute bottom-[0px] right-[-120px] w-[320px] h-[320px] bg-orange-300/10 blur-[120px] rounded-full" />
+        {/* SOFT BACKGROUNDS */}
+        <div className="absolute top-[120px] left-[-120px] w-[320px] h-[320px] bg-[#4F8CC9]/10 blur-[120px]" />
+        <div className="absolute bottom-[-50px] right-[-120px] w-[320px] h-[320px] bg-orange-200/20 blur-[120px]" />
 
-        <div className="grid lg:grid-cols-[1fr_540px] gap-[80px] items-start">
+        <div className="grid lg:grid-cols-[1fr_520px] gap-[70px] items-start">
+
           {/* LEFT */}
           <div>
-            <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[13px] font-semibold">
-              Get In Touch
-            </span>
 
-            <h2 className="text-[#16265E] text-[38px] md:text-[62px] font-bold leading-[1.08] mt-[22px] tracking-[-2px]">
-              We are always ready to help and answer your questions
+            <h2 className="text-[#111827] text-[28px] md:text-[46px] font-bold leading-[1.1]">
+              Let’s build something <br /> great together
             </h2>
 
-            <p className="text-gray-900 text-[16px] leading-[34px] mt-[30px] max-w-[750px]">
-              Looking for premium electrical materials, lighting collections,
-              modular accessories, industrial products, switches, wires, or
-              complete electrical solutions? Our team is always ready to assist
-              you with the right products and reliable support.
+            <p className="text-gray-600 text-[16px] md:text-[18px] leading-[32px] mt-[18px] max-w-[750px]">
+              We provide premium electrical materials, lighting solutions,
+              modular accessories, and industrial products. Reach out for
+              expert assistance and quick support.
             </p>
 
-            {/* CONTACT CARDS */}
-            <div className="grid md:grid-cols-2 gap-[22px] mt-[55px]">
-              {/* CARD */}
-              <div className="bg-white rounded-[24px] p-[26px] border border-[#ECECEC] shadow-[0_8px_35px_rgba(0,0,0,0.04)]">
-                <div className="w-[58px] h-[58px] rounded-full bg-orange-100 flex items-center justify-center">
-                  <Phone size={22} className="text-orange-500" />
-                </div>
+            {/* CONTACT INFO */}
+            <div className="grid md:grid-cols-2 gap-[20px] mt-[40px]">
 
-                <h4 className="text-[#111111] text-[20px] font-semibold mt-[20px]">
-                  Call Center
-                </h4>
+              {/* Phone */}
+              <div className="p-[22px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition">
+                <Phone className="text-orange-500" />
+                <h4 className="mt-[14px] font-semibold text-[18px]">Call Us</h4>
+                <p className="text-gray-600 mt-[8px]">+91 9923686402</p>
+              </div>
 
-                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
-                  +91 9923686402
+              {/* Location */}
+              <div className="p-[22px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition">
+                <MapPin className="text-[#4F8CC9]" />
+                <h4 className="mt-[14px] font-semibold text-[18px]">Location</h4>
+                <p className="text-gray-600 mt-[8px]">
+                  Gurukrupa Electricals & Light House,
+Chhatrapati Shivaji Maharaj Chowk, Walhekarwadi, Chinchwad, Pune – 411033,
+Maharashtra, India
                 </p>
               </div>
 
-              {/* CARD */}
-              <div className="bg-white rounded-[24px] p-[26px] border border-[#ECECEC] shadow-[0_8px_35px_rgba(0,0,0,0.04)]">
-                <div className="w-[58px] h-[58px] rounded-full bg-[#4F8CC9]/10 flex items-center justify-center">
-                  <MapPin size={22} className="text-[#4F8CC9]" />
-                </div>
-
-                <h4 className="text-[#111111] text-[20px] font-semibold mt-[20px]">
-                  Our Location
-                </h4>
-
-                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
-                  Chhatrapati Shivaji Maharaj Chowk, Walhekarwadi, Chinchwad,
-                  Pune – 411033
-                </p>
-              </div>
-
-              {/* CARD */}
-              <div className="bg-white rounded-[24px] p-[26px] border border-[#ECECEC] shadow-[0_8px_35px_rgba(0,0,0,0.04)]">
-                <div className="w-[58px] h-[58px] rounded-full bg-orange-100 flex items-center justify-center">
-                  <Mail size={22} className="text-orange-500" />
-                </div>
-
-                <h4 className="text-[#111111] text-[20px] font-semibold mt-[20px]">
-                  Email Address
-                </h4>
-
-                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
+              {/* Email */}
+              <div className="p-[22px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition">
+                <Mail className="text-orange-500" />
+                <h4 className="mt-[14px] font-semibold text-[18px]">Email</h4>
+                <p className="text-gray-600 mt-[8px]">
                   gurukrupaelc9@gmail.com
                 </p>
               </div>
 
-              {/* SOCIAL */}
-              <div className="bg-white rounded-[24px] p-[26px] border border-[#ECECEC] shadow-[0_8px_35px_rgba(0,0,0,0.04)]">
-                <div className="flex items-center gap-[12px]">
-                  <a
-                    href="#"
-                    className="w-[48px] h-[48px] rounded-full bg-[#F7F8FA] border border-[#ECECEC] flex items-center justify-center hover:bg-[#4F8CC9] hover:text-white transition"
-                  >
-                    <FaFacebookF size={15} />
-                  </a>
-
-                  <a
-                    href="#"
-                    className="w-[48px] h-[48px] rounded-full bg-[#F7F8FA] border border-[#ECECEC] flex items-center justify-center hover:bg-[#4F8CC9] hover:text-white transition"
-                  >
-                    <FaInstagram size={15} />
-                  </a>
-
-                  <a
-                    href="#"
-                    className="w-[48px] h-[48px] rounded-full bg-[#F7F8FA] border border-[#ECECEC] flex items-center justify-center hover:bg-[#4F8CC9] hover:text-white transition"
-                  >
-                    <FaLinkedinIn size={15} />
-                  </a>
+              {/* Social */}
+              <div className="p-[22px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition">
+                <div className="flex gap-3">
+                  <FaFacebookF className="cursor-pointer hover:text-[#4F8CC9]" />
+                  <FaInstagram className="cursor-pointer hover:text-[#4F8CC9]" />
+                  <FaLinkedinIn className="cursor-pointer hover:text-[#4F8CC9]" />
                 </div>
 
-                <h4 className="text-[#111111] text-[20px] font-semibold mt-[20px]">
-                  Social Network
+                <h4 className="mt-[14px] font-semibold text-[18px]">
+                  Follow Us
                 </h4>
-
-                <p className="text-gray-900 text-[15px] leading-[30px] mt-[12px]">
-                  Follow us for latest electrical products and lighting
-                  collections.
+                <p className="text-gray-600 mt-[8px]">
+                  Stay updated with new products
                 </p>
               </div>
+
             </div>
           </div>
 
           {/* FORM */}
-          <div className="relative">
-            {/* BLUR */}
-            <div className="absolute top-[-60px] right-[-60px] w-[180px] h-[180px] bg-orange-300/20 blur-[100px] rounded-full" />
+          <div className="bg-white rounded-[26px] p-[35px] border border-gray-100 shadow-lg">
 
-            <div className="relative bg-white rounded-[32px] p-[35px] md:p-[45px] border border-[#ECECEC] shadow-[0_15px_60px_rgba(0,0,0,0.06)]">
-              <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[12px] font-semibold">
-                Contact Form
-              </span>
+            <h3 className="text-[22px] font-semibold text-[#111827]">
+              Send Message
+            </h3>
 
-              <h3 className="text-[#16265E] text-[38px] md:text-[42px] font-black tracking-[-1px] leading-tight mt-[14px]">
-                Let’s Talk
-              </h3>
+            <p className="text-gray-500 mt-[8px] text-[14px]">
+              Fill the form and we’ll contact you soon
+            </p>
 
-              <p className="text-gray-900 text-[15px] leading-[30px] mt-[14px]">
-                Fill out your details and our team will contact you shortly
-                regarding your electrical requirements.
-              </p>
+            <form onSubmit={handleSubmit} className="mt-[30px] space-y-[18px]">
 
-              {/* FORM */}
-              <form
-                onSubmit={handleSubmit}
-                className="mt-[35px] space-y-[26px]"
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                onChange={handleChange}
+                className="w-full h-[52px] px-[18px] rounded-[14px] bg-[#F8FAFC] border outline-none focus:border-[#4F8CC9]"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                onChange={handleChange}
+                className="w-full h-[52px] px-[18px] rounded-[14px] bg-[#F8FAFC] border outline-none focus:border-[#4F8CC9]"
+              />
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+                onChange={handleChange}
+                className="w-full h-[52px] px-[18px] rounded-[14px] bg-[#F8FAFC] border outline-none focus:border-[#4F8CC9]"
+              />
+
+              <textarea
+                rows="5"
+                name="message"
+                placeholder="Message"
+                required
+                onChange={handleChange}
+                className="w-full px-[18px] py-[14px] rounded-[14px] bg-[#F8FAFC] border outline-none resize-none focus:border-[#4F8CC9]"
+              />
+
+              <button
+                type="submit"
+                className="group w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-400 to-orange-500 text-white py-[14px] rounded-[14px] font-semibold hover:scale-[1.02] transition"
               >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  required
-                  onChange={handleChange}
-                  className="w-full h-[58px] px-[22px] rounded-full bg-[#F7F8FA] border border-[#ECECEC] outline-none focus:border-[#4F8CC9]"
-                />
+                Send Message
+                <ArrowRight className="group-hover:translate-x-1 transition" />
+              </button>
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  required
-                  onChange={handleChange}
-                  className="w-full h-[58px] px-[22px] rounded-full bg-[#F7F8FA] border border-[#ECECEC] outline-none focus:border-[#4F8CC9]"
-                />
-
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  required
-                  onChange={handleChange}
-                  className="w-full h-[58px] px-[22px] rounded-full bg-[#F7F8FA] border border-[#ECECEC] outline-none focus:border-[#4F8CC9]"
-                />
-
-                <textarea
-                  rows="5"
-                  name="message"
-                  placeholder="Write your message..."
-                  required
-                  onChange={handleChange}
-                  className="w-full px-[22px] py-[18px] rounded-[24px] bg-[#F7F8FA] border border-[#ECECEC] outline-none resize-none focus:border-[#4F8CC9]"
-                />
-
-                <button
-                  type="submit"
-                  className="group bg-[#111111] hover:bg-[#4F8CC9] transition-all duration-500 px-[30px] py-[17px] rounded-full text-white text-[15px] font-medium flex items-center gap-[12px] shadow-xl"
-                >
-                  Send Message
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-1 transition duration-300"
-                  />
-                </button>
-              </form>
-            </div>
+            </form>
           </div>
+
         </div>
 
         {/* MAP */}
-        <div className="mt-[90px] rounded-[34px] overflow-hidden h-[450px] shadow-[0_15px_60px_rgba(0,0,0,0.06)] border border-[#ECECEC]">
+        <div className="mt-20 overflow-hidden rounded-[20px] border border-gray-200 shadow-md">
           <iframe
             title="map"
             src="https://maps.google.com/maps?q=Chhatrapati%20Shivaji%20Maharaj%20Chowk%20Walhekarwadi%20Chinchwad%20Pune%20411033&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-full border-0 grayscale"
-            allowFullScreen=""
+            className="w-full h-[320px] md:h-[420px]"
             loading="lazy"
           />
         </div>
+
       </div>
     </section>
   );

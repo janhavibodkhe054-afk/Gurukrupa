@@ -15,6 +15,7 @@ import LEDLightsPage from "./pages/LEDLightsPage";
 import FancyLightingPage from "./pages/FancyLightingPage";
 import IndustrialElectricalMaterialsPage from "./pages/IndustrialElectricalMaterialsPage";
 import Brand from "./pages/Brand";
+import FloatingContact from "./components/FloatingContact";
 
 
 
@@ -23,7 +24,7 @@ function App() {
     <BrowserRouter>
     <ScrollToTop/>
       <Navbar />
-
+<FloatingContact/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

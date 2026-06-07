@@ -1,207 +1,145 @@
-import React, { useEffect, useRef } from "react";
-import { Star, Quote } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { ArrowRight, Quote, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-export default function Testimonials() {
-  const sliderRef = useRef(null);
+export default function TestimonialSection() {
+const naviagte = useNavigate();
 
   const testimonials = [
     {
-      text: `Excellent experience buying electrical materials.
-The staff is very knowledgeable and helped us choose the right wiring, switches, and lighting products for our home project with proper guidance.`,
-      name: "Rahul Patil",
+      name: "Rahul Sharma",
+      role: "Home Owner",
+      text: "Excellent service and premium quality electrical products. Their guidance helped us choose the perfect lighting setup.",
     },
     {
-      text: `Great variety of modular switches, LED lights, and accessories.
-Products are reliable and suitable for both residential and commercial use. Pricing is reasonable and service is very fast with proper customer support.`,
-      name: "Amit Shah",
+      name: "Priya Deshmukh",
+      role: "Interior Designer",
+      text: "Outstanding product quality and professional support. Highly recommended.",
     },
     {
-      text: `Very reliable supplier for industrial electrical materials.
-We regularly purchase cables, wiring, and components for our projects. Always genuine branded products delivered on time with good technical support.`,
-      name: "Sanket More",
+      name: "Amit Patil",
+      role: "Business Owner",
+      text: "Reliable supplier with genuine products and timely delivery.",
     },
     {
-      text: `Impressive collection of modern decorative lighting products.
-Showroom is well organized and easy to explore different options. Staff explains features clearly and helps in selection based on requirement.`,
-      name: "Vikas Jadhav",
+      name: "Sneha Joshi",
+      role: "Architect",
+      text: "Modern lighting collection and amazing customer service.",
     },
     {
-      text: `Helpful and professional staff with good product knowledge.
-They suggested the best electrical solutions within our budget. Quality is never compromised and service is consistent for every purchase.`,
-      name: "Rohan Kulkarni",
-    },
-    {
-      text: `Trusted shop for wiring materials, switches, cables, and accessories.
-Wide availability of branded electrical products. After-sales support is also very reliable and quick for any assistance.`,
-      name: "Pratik Deshmukh",
+      name: "Vikram Kulkarni",
+      role: "Contractor",
+      text: "Great pricing, excellent stock availability and quick support.",
     },
   ];
 
-  // DUPLICATE FOR INFINITE LOOP
-  const loopTestimonials = [...testimonials, ...testimonials];
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length);
+    }, 3500);
 
-    let animationFrame;
-    let position = 0;
-
-    // SPEED
-    const speed = window.innerWidth < 768 ? 0.5 : 0.8;
-
-    const autoSlide = () => {
-      position += speed;
-
-      slider.scrollLeft = position;
-
-      // RESET SMOOTHLY
-      if (position >= slider.scrollWidth / 2) {
-        position = 0;
-        slider.scrollLeft = 0;
-      }
-
-      animationFrame = requestAnimationFrame(autoSlide);
-    };
-
-    autoSlide();
-
-    // PAUSE ON HOVER
-    const stopAnimation = () => {
-      cancelAnimationFrame(animationFrame);
-    };
-
-    const startAnimation = () => {
-      autoSlide();
-    };
-
-    slider.addEventListener("mouseenter", stopAnimation);
-    slider.addEventListener("mouseleave", startAnimation);
-
-    return () => {
-      cancelAnimationFrame(animationFrame);
-
-      slider.removeEventListener("mouseenter", stopAnimation);
-      slider.removeEventListener("mouseleave", startAnimation);
-    };
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#F8FBFF] to-white py-16 sm:py-20 overflow-hidden">
-
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-[#4F8CC9]/10 blur-[120px] rounded-full" />
-
-      <div className="absolute bottom-[-120px] right-[-120px] w-[320px] h-[320px] bg-[#16265E]/10 blur-[120px] rounded-full" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-
-        {/* HEADER */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-
+    <section className="py-10 bg-gradient-to-t from-white to-slate-200 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          {/* LEFT */}
           <div>
-
-            <span className="inline-block bg-[#4F8CC9]/10 text-[#4F8CC9] text-[11px] sm:text-[13px] uppercase tracking-[3px] font-semibold px-5 py-2 rounded-full">
+            <span className="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-semibold text-sm">
               Testimonials
             </span>
 
-            <h2 className="text-[30px] sm:text-[40px] md:text-[50px] font-black text-[#16265E] mt-4 leading-tight">
-              What Customers Say
+            <h2 className="mt-6 text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+              What Our
+              <br />
+              Customers Say
             </h2>
 
-            <div className="w-24 h-[4px] rounded-full bg-gradient-to-r from-[#4F8CC9] to-[#16265E] mt-5" />
+            <p className="mt-5 text-slate-600 text-base md:text-lg max-w-lg">
+              Trusted by hundreds of customers for quality electrical
+              products, expert guidance and reliable service.
+            </p>
+
+           
           </div>
 
-          <p className="text-gray-900 text-[15px] sm:text-[16px] leading-[30px] max-w-[540px]">
-            Trusted by homeowners, electricians, contractors,
-            and industries for premium electrical materials and
-            modern lighting solutions.
-          </p>
-        </div>
+          {/* RIGHT */}
+          <div>
+            {/* Main Card */}
+            <div className="relative bg-white rounded-3xl p-7 shadow-xl border border-slate-100 overflow-hidden">
+              <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-blue-600 to-orange-500" />
 
-        {/* SLIDER */}
-        <div
-          ref={sliderRef}
-          className="
-            overflow-x-scroll
-            scrollbar-hide
-            scroll-smooth
-            whitespace-nowrap
-            select-none
-          "
-        >
+              <Quote
+                size={40}
+                className="text-blue-500/20 absolute top-5 right-5"
+              />
 
-          <div className="flex gap-5 md:gap-7 w-max pr-4">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    size={16}
+                    className="fill-orange-400 text-orange-400"
+                  />
+                ))}
+              </div>
 
-            {loopTestimonials.map((item, index) => (
-              <div
-                key={index}
-                className="
-                  relative
-                  flex-shrink-0
-                  w-[85vw] sm:w-[340px] md:w-[370px] lg:w-[390px]
-                  bg-white
-                  border border-[#E8EEF9]
-                  rounded-[30px]
-                  p-6 sm:p-7
-                  shadow-[0_8px_30px_rgba(0,0,0,0.05)]
-                  hover:shadow-[0_20px_60px_rgba(22,38,94,0.12)]
-                  transition-all duration-500
-                  hover:-translate-y-2
-                  overflow-hidden
-                "
-              >
+              <p className="text-slate-700 leading-relaxed text-lg min-h-[90px]">
+                "{testimonials[active].text}"
+              </p>
 
-                {/* TOP BORDER */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#4F8CC9] to-[#16265E]" />
-
-                {/* QUOTE ICON */}
-                <div className="absolute top-6 right-6 opacity-10">
-                  <Quote size={52} className="text-[#16265E]" />
-                </div>
-
-                {/* STARS */}
-                <div className="flex gap-1 mb-5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      fill="#FDBA74"
-                      className="text-orange-300"
-                    />
-                  ))}
-                </div>
-
-                {/* TEXT */}
-                <p className="text-gray-900 text-[15px] leading-[30px] whitespace-pre-line relative z-10">
-                  “{item.text}”
+              <div className="mt-6">
+                <h4 className="font-bold text-slate-900">
+                  {testimonials[active].name}
+                </h4>
+                <p className="text-blue-600 text-sm">
+                  {testimonials[active].role}
                 </p>
+              </div>
+            </div>
 
-                {/* DIVIDER */}
-                <div className="h-[1px] bg-[#EEF2F7] my-6" />
-
-                {/* USER */}
-                <div className="flex items-center justify-between">
-
-                  <div>
-                    <h4 className="text-[18px] font-bold text-[#16265E]">
-                      {item.name}
-                    </h4>
-
-                    <p className="text-[#4F8CC9] text-[11px] uppercase tracking-[2px] mt-1 font-medium">
-                      Verified Customer
-                    </p>
+            {/* Bottom Cards */}
+            <div className="grid grid-cols-3 gap-3 mt-4">
+              {testimonials.slice(0, 3).map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl p-4 border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-600 to-orange-500 text-white flex items-center justify-center font-bold mb-3">
+                    {item.name.charAt(0)}
                   </div>
 
-                  {/* VERIFIED DOT */}
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#4F8CC9] to-[#16265E]" />
-                </div>
+                  <h5 className="font-semibold text-sm text-slate-900 line-clamp-1">
+                    {item.name}
+                  </h5>
 
-              </div>
-            ))}
+                  <p className="text-xs text-slate-500 mt-1">
+                    {item.role}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-5">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    active === i
+                      ? "w-8 bg-gradient-to-r from-blue-600 to-orange-500"
+                      : "w-2 bg-slate-300"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

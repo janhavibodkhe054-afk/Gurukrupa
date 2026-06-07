@@ -1,13 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  ShieldCheck,
-  Zap,
-  Award,
-} from "lucide-react";
+import { ShieldCheck, Zap, Award } from "lucide-react";
 
 export default function BrandsGrid() {
-
   const brands = [
     {
       name: "Polycab",
@@ -169,7 +164,7 @@ export default function BrandsGrid() {
       category: "Industrial Products",
       info: "Trusted industrial electrical materials.",
     },
-     {
+    {
       name: "AnkurLighting",
       logo: "f5.jpg",
       category: "Fancy Lights",
@@ -178,8 +173,7 @@ export default function BrandsGrid() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F8FAFC] py-[60px] overflow-hidden">
-
+    <section className="relative w-full bg-[#F8FAFC] py-10 md:py-10 overflow-hidden">
       {/* BLURS */}
       <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-orange-300/10 blur-[120px] rounded-full" />
 
@@ -187,78 +181,36 @@ export default function BrandsGrid() {
 
       {/* BG TEXT */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-
         <h1 className="text-[90px] md:text-[180px] lg:text-[240px] font-black text-[#111111]/[0.03] uppercase tracking-[12px]">
           Brands
         </h1>
       </div>
 
       <div className="relative max-w-[1450px] mx-auto px-[20px] md:px-[40px]">
-
         {/* TOP */}
         <motion.div
           initial={{ opacity: 0, y: 70 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-[70px]"
+          className="text-left md:text-center mb-10"
         >
-
           <span className="uppercase tracking-[5px] text-[#4F8CC9] text-[13px] font-semibold">
             Trusted Electrical Brands
           </span>
 
-          <h2 className="text-[38px] md:text-[60px] font-bold text-[#1B255A] mt-[18px] leading-[1.05]">
+          <h2 className="text-[28px] md:text-[44px] leading-[1.1] font-bold text-[#1B255A] mt-[18px]">
             Brands We Deal In
           </h2>
 
-          <p className="text-gray-500 text-[16px] leading-[32px] mt-[18px] max-w-[760px] mx-auto">
-            Premium electrical and lighting products from
-            industry-leading brands trusted for quality,
-            safety, performance, and innovation.
+          <p className="text-gray-500 text-base md:text-lg leading-[32px] mt-[18px] max-w-[760px] mx-auto">
+            Premium electrical and lighting products from industry-leading
+            brands trusted for quality, safety, performance, and innovation.
           </p>
-
-          {/* FEATURES */}
-          <div className="flex flex-wrap justify-center gap-[16px] mt-[32px]">
-
-            <div className="flex items-center gap-[10px] bg-white px-[18px] py-[12px] rounded-full border border-[#E8EEF5] shadow-sm">
-              <ShieldCheck
-                size={18}
-                className="text-[#4F8CC9]"
-              />
-
-              <span className="text-[14px] font-medium">
-                Genuine Products
-              </span>
-            </div>
-
-            <div className="flex items-center gap-[10px] bg-white px-[18px] py-[12px] rounded-full border border-[#E8EEF5] shadow-sm">
-              <Award
-                size={18}
-                className="text-[#4F8CC9]"
-              />
-
-              <span className="text-[14px] font-medium">
-                Trusted Brands
-              </span>
-            </div>
-
-            <div className="flex items-center gap-[10px] bg-white px-[18px] py-[12px] rounded-full border border-[#E8EEF5] shadow-sm">
-              <Zap
-                size={18}
-                className="text-[#4F8CC9]"
-              />
-
-              <span className="text-[14px] font-medium">
-                Premium Quality
-              </span>
-            </div>
-          </div>
         </motion.div>
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[26px]">
-
           {brands.map((brand, index) => (
             <motion.div
               key={index}
@@ -274,13 +226,11 @@ export default function BrandsGrid() {
               }}
               className="group relative bg-white rounded-[32px] border border-[#EDF2F7] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(79,140,201,0.12)] transition-all duration-500"
             >
-
               {/* TOP LINE */}
               <div className="h-[4px] w-full bg-gradient-to-r from-orange-400 via-[#4F8CC9] to-orange-300 scale-x-0 group-hover:scale-x-100 transition duration-500 origin-left" />
 
               {/* CONTENT */}
               <div className="p-[28px]">
-
                 {/* CATEGORY */}
                 <span className="inline-block text-[11px] uppercase tracking-[2px] text-[#4F8CC9] font-semibold bg-[#4F8CC9]/10 px-[12px] py-[7px] rounded-full">
                   {brand.category}
@@ -288,7 +238,6 @@ export default function BrandsGrid() {
 
                 {/* LOGO */}
                 <div className="h-[90px] flex items-center justify-center mt-[25px]">
-
                   <img
                     src={brand.logo}
                     alt={brand.name}

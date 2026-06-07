@@ -1,5 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Cable,
+  Lightbulb,
+  ShieldCheck,
+  Zap,
+  LampDesk,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ProductCategories() {
   const sliderRef = useRef(null);
@@ -7,54 +17,59 @@ export default function ProductCategories() {
 
   const products = [
     {
-      button: "Explore Wires",
-      video: "/vd1.mp4",
+      title: "Electrical Wires & Cables",
+      desc: "Premium electrical wires and cables designed for maximum safety, efficient power transmission.",
+      image: "/product1.jpg",
+      icon: <Cable size={32} />,
       path: "/electrical-wires",
     },
-
     {
-      button: "Explore Switches",
-      video: "/vd2.mp4",
+      title: "Switches & Accessories",
+      desc: "Modern modular switches and electrical accessories crafted for homes, commercial spaces.",
+      image: "/product2.png",
+      icon: <Zap size={32} />,
       path: "/switches-modular-accessories",
     },
-
     {
-      button: "Explore LED Lights",
-      video: "/vd3.mp4",
+      title: "LED Lighting",
+      desc: "Energy-efficient LED lighting solutions delivering superior brightness..",
+      image: "/product3.avif",
+      icon: <Lightbulb size={32} />,
       path: "/led-lights",
     },
-
     {
-      button: "Explore Fancy Lights",
-      video: "/vd4.mp4",
+      title: "Fancy Lighting",
+      desc: "Designer decorative lighting collections that enhance luxury interiors and modern spaces.",
+      image: "/product4.jpg",
+      icon: <LampDesk size={32} />,
       path: "/fancy-lighting",
     },
-
     {
-      button: "Explore Industrial",
-      video: "/vd5.mp4",
+      title: "Industrial Materials",
+      desc: "Heavy-duty industrial electrical products engineered for demanding commercial applications.",
+      image: "/product5.avif",
+      icon: <ShieldCheck size={32} />,
       path: "/industrial-electrical-materials",
     },
   ];
 
   const loopProducts = [...products, ...products];
 
-  // RESPONSIVE CARD WIDTH
   const getCardWidth = () => {
-    if (window.innerWidth < 640) return window.innerWidth - 50;
-    if (window.innerWidth < 1024) return 340;
-    return 390;
+    if (window.innerWidth < 640) return window.innerWidth - 40;
+    if (window.innerWidth < 1024) return 380;
+
+    return (window.innerWidth - 140) / 3;
   };
 
   const nextSlide = () => {
     const slider = sliderRef.current;
-    const cardWidth = getCardWidth() + 26;
+    const cardWidth = getCardWidth() + 24;
 
     currentIndexRef.current++;
 
     if (slider) {
-      slider.style.transition = "transform 0.9s ease";
-
+      slider.style.transition = "transform .8s ease";
       slider.style.transform = `translateX(-${
         currentIndexRef.current * cardWidth
       }px)`;
@@ -62,175 +77,224 @@ export default function ProductCategories() {
 
     if (currentIndexRef.current >= products.length) {
       setTimeout(() => {
-        if (slider) {
-          slider.style.transition = "none";
-          slider.style.transform = `translateX(0px)`;
-        }
-
+        slider.style.transition = "none";
+        slider.style.transform = "translateX(0px)";
         currentIndexRef.current = 0;
-      }, 900);
+      }, 800);
     }
   };
 
   const prevSlide = () => {
-    const slider = sliderRef.current;
-    const cardWidth = getCardWidth() + 26;
-
     if (currentIndexRef.current <= 0) return;
+
+    const slider = sliderRef.current;
+    const cardWidth = getCardWidth() + 24;
 
     currentIndexRef.current--;
 
-    if (slider) {
-      slider.style.transition = "transform 0.9s ease";
-
-      slider.style.transform = `translateX(-${
-        currentIndexRef.current * cardWidth
-      }px)`;
-    }
+    slider.style.transition = "transform .8s ease";
+    slider.style.transform = `translateX(-${
+      currentIndexRef.current * cardWidth
+    }px)`;
   };
 
-  // AUTO SLIDE
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-
+    const interval = setInterval(nextSlide, 4500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="w-full bg-[#F3F3F3] py-[70px] md:py-[90px] overflow-hidden">
+    <section className="py-10 pb-0 bg-white overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        {/* Heading */}
+        <div className="text-left md:text-center mb-5 md:mb-10">
+          <span className="inline-block text-[#2146B6] uppercase tracking-[4px] font-semibold">
+            OUR PRODUCTS
+          </span>
 
-      {/* CONTAINER */}
-      <div className="max-w-[1600px] mx-auto px-[16px] sm:px-[24px] md:px-[40px] lg:px-[60px]">
+          <h2 className="mt-3 text-[28px] md:text-[44px] leading-[1.1] font-bold text-[#16265E]">
+            Premium Electrical Solutions
+          </h2>
 
-        {/* HEADING */}
-        <div className="text-center mb-[55px] md:mb-[80px]">
+          <p className="mt-3 text-gray-600 max-w-7xl text-base md:text-lg">
+            High-quality electrical products, lighting solutions, wires, cables
+            and accessories for every project.
+          </p>
+        </div>
 
-  {/* HEADING */}
-  <div className="flex flex-col items-center">
-
-    <span className="uppercase tracking-[4px] text-[#4F8CC9] text-[11px] font-semibold mb-4">
-      Our Products
-    </span>
-
-    <h2 className="text-[26px] sm:text-[34px] md:text-[46px] lg:text-[54px] font-black tracking-[-1.5px] text-[#16265E] leading-[1.1]">
-      Smart by Design,
-      <span className="text-[#4F8CC9]">
-        {" "}Thoughtful by Nature
-      </span>
-    </h2>
-
-    {/* UNDERLINE */}
-    <div className="relative mt-5">
-      <div className="w-[130px] h-[4px] rounded-full bg-gradient-to-r from-[#F28C28] via-[#FFB347] to-[#4F8CC9]" />
-
-      <div className="absolute -top-[3px] left-1/2 -translate-x-1/2 w-[12px] h-[12px] rounded-full bg-[#F28C28] border-[3px] border-white shadow-md" />
-    </div>
-  </div>
-
-  {/* DESCRIPTION */}
-  <p className="text-black text-[15px] sm:text-[17px] md:text-[18px] mt-[24px] max-w-[850px] mx-auto leading-[32px] md:leading-[36px] font-light">
-    Explore our premium collection of electrical materials,
-    modular accessories, LED lighting, decorative fixtures,
-    and industrial electrical solutions crafted for modern
-    residential, commercial, and industrial spaces.
-  </p>
-</div>
-
-        {/* SLIDER AREA */}
-        <div className="relative max-w-[1280px] mx-auto">
-
-          {/* LEFT BUTTON */}
+        <div className="relative">
+          {/* Prev */}
           <button
             onClick={prevSlide}
-            className="hidden md:flex absolute left-[-15px] lg:left-[-25px] top-1/2 -translate-y-1/2 z-20 w-[50px] h-[50px] lg:w-[58px] lg:h-[58px] rounded-full bg-white shadow-xl items-center justify-center hover:bg-black hover:text-white transition duration-300"
+            className="hidden lg:flex absolute left-[-35px] top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-white text-black shadow-xl items-center justify-center hover:bg-[#2146B6] hover:text-white transition-all duration-300"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft />
           </button>
 
-          {/* RIGHT BUTTON */}
+          {/* Next */}
           <button
             onClick={nextSlide}
-            className="hidden md:flex absolute right-[-15px] lg:right-[-25px] top-1/2 -translate-y-1/2 z-20 w-[50px] h-[50px] lg:w-[58px] lg:h-[58px] rounded-full bg-white shadow-xl items-center justify-center hover:bg-black hover:text-white transition duration-300"
+            className="hidden lg:flex absolute right-[-35px] top-1/2 -translate-y-1/2 z-30 w-14 h-14 rounded-full bg-white text-black shadow-xl items-center justify-center hover:bg-[#2146B6] hover:text-white transition-all duration-300"
           >
-            <ChevronRight size={28} />
+            <ChevronRight />
           </button>
 
-          {/* SLIDER */}
           <div className="overflow-hidden">
-
-            <div
-              ref={sliderRef}
-              className="flex gap-[20px] md:gap-[26px]"
-            >
+            <div ref={sliderRef} className="flex gap-5">
               {loopProducts.map((item, index) => (
                 <div
                   key={index}
-                  className="
-                    min-w-[calc(100vw-50px)]
-                    sm:min-w-[320px]
-                    md:min-w-[340px]
-                    lg:min-w-[390px]
-                    flex-shrink-0
-                  "
+                  className="min-w-[calc(100vw-40px)] sm:min-w-[380px] lg:min-w-[31.8%]"
                 >
-
-                  {/* CARD */}
-                  <div className="rounded-[24px] md:rounded-[30px] overflow-hidden bg-white shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
-
-                    {/* VIDEO */}
-                    <div className="relative h-[420px] sm:h-[480px] md:h-[540px] lg:h-[560px] overflow-hidden">
-
-                      <video
-                        src={item.video}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-full object-cover bg-black"
+                  <div className="relative h-[650px] group">
+                    {/* Image */}
+                    <div className="h-[380px] overflow-hidden rounded-t-xl">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                       />
-
-                      {/* OVERLAY */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                     </div>
 
-                    {/* BUTTON */}
-                    <div className="p-[16px] md:p-[20px] flex justify-center bg-[#F3F3F3]">
+                    {/* Content Card */}
+                    <div
+                      className="
+  absolute left-1/2 -translate-x-1/2
+  top-[290px]
+  w-[88%]
+  h-[320px]
+  bg-white
+  rounded-md
+  shadow-[0_15px_50px_rgba(0,0,0,0.12)]
+  px-8 pt-16 pb-8
+  text-center
+  flex flex-col
+  transition-all duration-500
+  group-hover:-translate-y-3
+"
+                    >
+                      {/* Floating Icon */}
+                      <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-20">
+                        <motion.div
+                          whileHover={{
+                            rotateY: 180,
+                            scale: 1.12,
+                          }}
+                          transition={{
+                            duration: 0.7,
+                            ease: "easeInOut",
+                          }}
+                          className="
+      w-24
+      h-24
+      rounded-full
+      bg-gradient-to-br
+      from-[#2146B6]
+      to-[#4F8CC9]
+      text-white
+      flex
+      items-center
+      justify-center
+      shadow-[0_15px_40px_rgba(33,70,182,0.35)]
+      cursor-pointer
+    "
+                          style={{
+                            transformStyle: "preserve-3d",
+                          }}
+                        >
+                          <div className="transition-all duration-500 group-hover:text-orange-400">
+                            {item.icon}
+                          </div>
+                        </motion.div>
+                      </div>
 
-                      <button
-                        onClick={() =>
-                          (window.location.href = item.path)
-                        }
-                        className="bg-[#343B48] hover:bg-black transition px-[22px] md:px-[28px] py-[12px] md:py-[14px] rounded-[14px] md:rounded-[18px] text-white text-[14px] md:text-[16px] font-medium flex items-center gap-[10px]"
-                      >
-                        {item.button}
+                      <h3 className="text-[20px] font-bold text-black leading-tight min-h-[30px]">
+                        {item.title}
+                      </h3>
 
-                        <ArrowRight size={18} />
-                      </button>
+                      <p className="mt-4 text-gray-600 leading-7 flex-1 text-base md:text-lg">
+                        {item.desc}
+                      </p>
+
+                      <div className="mt-auto flex justify-center">
+                        <button
+                          onClick={() => (window.location.href = item.path)}
+                          className="
+      group
+      relative
+      overflow-hidden
+      inline-flex
+      items-center
+      gap-2
+      px-5
+      py-2.5
+      rounded-full
+      text-sm
+      font-semibold
+      text-[#f37021]
+      border
+      border-[#f37021]/30
+      bg-white
+      transition-all
+      duration-500
+      hover:-translate-y-1
+      hover:shadow-[0_12px_30px_rgba(243,112,33,0.25)]
+    "
+                        >
+                          {/* Background Animation */}
+                          <span
+                            className="
+        absolute
+        inset-0
+        bg-gradient-to-r
+        from-[#f37021]
+        to-[#ff9f45]
+        scale-x-0
+        origin-left
+        transition-transform
+        duration-500
+        group-hover:scale-x-100
+      "
+                          />
+
+                          <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+                            Learn More
+                          </span>
+
+                          <span
+                            className="
+        relative
+        z-10
+        w-7
+        h-7
+        rounded-full
+        bg-[#f37021]/10
+        flex
+        items-center
+        justify-center
+        transition-all
+        duration-500
+        group-hover:bg-white
+        group-hover:rotate-45
+      "
+                          >
+                            <ArrowRight
+                              size={14}
+                              className="
+          text-[#f37021]
+          group-hover:translate-x-0.5
+          transition-all
+          duration-500
+        "
+                            />
+                          </span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* MOBILE BUTTONS */}
-          <div className="flex md:hidden justify-center gap-4 mt-8">
-
-            <button
-              onClick={prevSlide}
-              className="w-[48px] h-[48px] rounded-full bg-white shadow-lg flex items-center justify-center"
-            >
-              <ChevronLeft size={24} />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="w-[48px] h-[48px] rounded-full bg-white shadow-lg flex items-center justify-center"
-            >
-              <ChevronRight size={24} />
-            </button>
           </div>
         </div>
       </div>

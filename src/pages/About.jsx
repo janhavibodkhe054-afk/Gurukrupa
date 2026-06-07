@@ -14,7 +14,7 @@ const About = () => {
       <AboutCompanySection/>
       <StatsSection/>
       <WhyChooseSection/>
-      <VisionMissionSection/>
+      
       <FounderMessageSection/>
       <CTASection/>
     </div>

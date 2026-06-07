@@ -34,7 +34,7 @@ export default function Footer() {
         <img
           src="/logo.png"
           alt="logo"
-          className="w-[220px] object-contain bg-white rounded-xl p-2"
+          className="w-[120px] md:w-[150px] object-contain bg-white rounded-xl p-2"
         />
 
         {/* DESCRIPTION */}
