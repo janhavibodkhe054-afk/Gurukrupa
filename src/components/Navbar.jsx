@@ -28,7 +28,7 @@ export default function PremiumNavbar() {
   const SocialIcons = () => (
     <div className="hidden lg:flex items-center gap-3">
       <a
-        href="https://facebook.com"
+        href="https://www.facebook.com/share/1SbUNzQERm/"
         target="_blank"
         className="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition"
       >
@@ -36,20 +36,14 @@ export default function PremiumNavbar() {
       </a>
 
       <a
-        href="https://instagram.com"
+        href="https://www.instagram.com/gurukrupa_electricals?igsh=MWE5M3E4bWk0MzU1cw=="
         target="_blank"
         className="w-9 h-9 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 text-white flex items-center justify-center hover:scale-110 transition"
       >
         <FaInstagram size={14} />
       </a>
 
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        className="w-9 h-9 rounded-full bg-[#0A66C2] text-white flex items-center justify-center hover:scale-110 transition"
-      >
-        <FaLinkedinIn size={14} />
-      </a>
+      
     </div>
   );
 

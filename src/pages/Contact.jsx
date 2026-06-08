@@ -32,7 +32,7 @@ ${formData.message}
     `;
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      text
+      text,
     )}`;
 
     window.open(whatsappURL, "_blank");
@@ -40,57 +40,45 @@ ${formData.message}
 
   return (
     <section className="w-full bg-[#F8FAFC] overflow-hidden">
-
       {/* ================= HERO ================= */}
       <div className="relative h-[180px] md:h-[270px] overflow-hidden">
-
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/ctabg.jpg')",
+            backgroundImage: "url('/ctabg.jpg')",
           }}
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-
-          
-
           <h1 className="text-white text-4xl md:text-6xl font-bold">
             Contact Us
           </h1>
-
-          
         </div>
       </div>
 
       {/* ================= MAIN ================= */}
       <div className="relative max-w-[1400px] mx-auto px-[20px] md:px-[40px] py-[90px]">
-
         {/* SOFT BACKGROUNDS */}
         <div className="absolute top-[120px] left-[-120px] w-[320px] h-[320px] bg-[#4F8CC9]/10 blur-[120px]" />
         <div className="absolute bottom-[-50px] right-[-120px] w-[320px] h-[320px] bg-orange-200/20 blur-[120px]" />
 
         <div className="grid lg:grid-cols-[1fr_520px] gap-[70px] items-start">
-
           {/* LEFT */}
           <div>
-
             <h2 className="text-[#111827] text-[28px] md:text-[46px] font-bold leading-[1.1]">
               Let’s build something <br /> great together
             </h2>
 
             <p className="text-gray-600 text-[16px] md:text-[18px] leading-[32px] mt-[18px] max-w-[750px]">
               We provide premium electrical materials, lighting solutions,
-              modular accessories, and industrial products. Reach out for
-              expert assistance and quick support.
+              modular accessories, and industrial products. Reach out for expert
+              assistance and quick support.
             </p>
 
             {/* CONTACT INFO */}
             <div className="grid md:grid-cols-2 gap-[20px] mt-[40px]">
-
               {/* Phone */}
               <div className="p-[22px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition">
                 <Phone className="text-orange-500" />
@@ -101,11 +89,13 @@ ${formData.message}
               {/* Location */}
               <div className="p-[22px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition">
                 <MapPin className="text-[#4F8CC9]" />
-                <h4 className="mt-[14px] font-semibold text-[18px]">Location</h4>
+                <h4 className="mt-[14px] font-semibold text-[18px]">
+                  Location
+                </h4>
                 <p className="text-gray-600 mt-[8px]">
-                  Gurukrupa Electricals & Light House,
-Chhatrapati Shivaji Maharaj Chowk, Walhekarwadi, Chinchwad, Pune – 411033,
-Maharashtra, India
+                  Gurukrupa Electricals & Light House, Chhatrapati Shivaji
+                  Maharaj Chowk, Walhekarwadi, Chinchwad, Pune – 411033,
+                  Maharashtra, India
                 </p>
               </div>
 
@@ -120,26 +110,39 @@ Maharashtra, India
 
               {/* Social */}
               <div className="p-[22px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition">
-                <div className="flex gap-3">
-                  <FaFacebookF className="cursor-pointer hover:text-[#4F8CC9]" />
-                  <FaInstagram className="cursor-pointer hover:text-[#4F8CC9]" />
-                  <FaLinkedinIn className="cursor-pointer hover:text-[#4F8CC9]" />
+                <div className="flex gap-4">
+                  <a
+                    href="https://www.facebook.com/share/1SbUNzQERm/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-[#1877F2] transition"
+                  >
+                    <FaFacebookF size={18} />
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/gurukrupa_electricals?igsh=MWE5M3E4bWk0MzU1cw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-[#E4405F] transition"
+                  >
+                    <FaInstagram size={18} />
+                  </a>
                 </div>
 
                 <h4 className="mt-[14px] font-semibold text-[18px]">
                   Follow Us
                 </h4>
+
                 <p className="text-gray-600 mt-[8px]">
                   Stay updated with new products
                 </p>
               </div>
-
             </div>
           </div>
 
           {/* FORM */}
           <div className="bg-white rounded-[26px] p-[35px] border border-gray-100 shadow-lg">
-
             <h3 className="text-[22px] font-semibold text-[#111827]">
               Send Message
             </h3>
@@ -149,7 +152,6 @@ Maharashtra, India
             </p>
 
             <form onSubmit={handleSubmit} className="mt-[30px] space-y-[18px]">
-
               <input
                 type="text"
                 name="name"
@@ -193,10 +195,8 @@ Maharashtra, India
                 Send Message
                 <ArrowRight className="group-hover:translate-x-1 transition" />
               </button>
-
             </form>
           </div>
-
         </div>
 
         {/* MAP */}
@@ -208,7 +208,6 @@ Maharashtra, India
             loading="lazy"
           />
         </div>
-
       </div>
     </section>
   );
